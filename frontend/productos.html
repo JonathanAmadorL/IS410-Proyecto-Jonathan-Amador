@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>Landing</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/productos.css">
+    <link rel="stylesheet" href="css/all.css">
+
+
+
+  </head>
+  <body>
+    <!-- IDEA: NAVBAR -->
+      <nav class="navegacion">
+        <div class="logo">
+          <h4>LOGO</h4>
+        </div>
+
+        <ul class="enlaces">
+          <li><a href="landing.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="registro.html">Registrarse</a></li>
+          <li><a href="">Login</a></li>
+          <li><a href="">SuperUser</a></li>
+        </ul>
+
+        <div class="desplegar">
+          <div class="linea1"></div>
+          <div class="linea2"></div>
+          <div class="linea3"></div>
+        </div>
+      </nav>
+
+      <!-- IDEA: MAIN QUE CONTENDRA TOOODO LO QUE NOS EA NAVBAR -->
+      <main class="cuerpo">
+
+        <!-- IDEA: BIENVENIDA QUE SERA UN FULLSCREEN  -->
+        <section class="bienvenida-productos" id="bienvenida-productos">
+          <div class="atraccion-clientes">
+            <div class="atraccion-texto">
+              <h1>¡Asombroso!</h1>
+              <p>
+                Maravillate con todas estas ofertas disponibles en nuestra tienda.
+
+                Sera mejor que te apresures o te quedaras sin nada.
+              </p>
+              <small>Antes de continuar, recuerda: (ver siq uitamos esto dku)</small>
+            </div>
+
+            <div class="atraccion-botones">
+              <button type="button" name="button" class="atr-btn-registro"><a href="#" >Registrarse</a></button>
+              <button type="button" name="button" class="atr-btn-login"><a href="#" >Login</a></button>
+            </div>
+          </div>
+
+          <!-- IDEA: IMAGEN PARA EL FULLSCREEN -->
+          <div class="atraccion-imagenes">
+            <img src="img/carrito.png" alt="">
+          </div>
+
+          <!-- IDEA: FLECHA QUE NOS DIRIGIRA A LA OTRA SECCION... o sea la de productos -->
+          <div class="flecha-abajo">
+            <a href="#productos"><i class="fas fa-angle-down"></i></a>
+          </div>
+
+        </section>
+
+        <!-- IDEA: INICIO DE LA SECTION DE PRODUCTOS -->
+
+        <section class="productos" id="productos">
+
+          <!-- IDEA: BOTN PARA REGRESAR A BIENVENIDA... TEMPORAL -->
+          <div class="flecha-arriba">
+            <a href="#bienvenida-productos"><i class="fas fa-angle-up"></i></a>
+          </div>
+
+          <!-- IDEA: toda la section de productos -->
+          <div class="container">
+              <h1 class="text-center pt-5 pb-1">Productos</h1>
+              <h3 class="text-center text-muted mb-5">Aqui encontraras las mejores ofertas</h3>
+
+              <div class="row pt-5">
+
+                <div class="d-flex justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 pb-5">
+                  <div class="card" onmouseover="desplegar(this)" onmouseout="cerrar(this)">
+                    <div class="imagen-card">
+                      <img src="img/compra-slide2.jpg" alt="">
+                    </div>
+                    <div class="contenido-card">
+                      <div class="titulo">Nombre del producto</div>
+                      <div class="sub-titulo-precio">L.150</div>
+                      <div class="botones-card">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore nisi mollitia, voluptate vero ipsa quo temporibus, quaerat enim doloribus hic magni, beatae. In est necessitatibus ullam facilis beatae, dolores tempore, sit quod atque mollitia nesciunt deserunt eos, recusandae ducimus molestiae!</p>
+                        <button type="button" name="button" class="modal-comprar">Comprar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 pb-5">
+                  <div class="card">
+                    <div class="imagen-card">
+                      <img src="img/compra-slide2.jpg" alt="">
+                    </div>
+                    <div class="contenido-card">
+                      <div class="titulo">Nombre del producto</div>
+                      <div class="sub-titulo-precio">L.150</div>
+                      <div class="botones-card">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore nisi mollitia, voluptate vero ipsa quo temporibus, quaerat enim doloribus hic magni, beatae. In est necessitatibus ullam facilis beatae, dolores tempore, sit quod atque mollitia nesciunt deserunt eos, recusandae ducimus molestiae!</p>
+                        <button type="button" name="button">Comprar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 pb-5">
+                  <div class="card">
+                    <div class="imagen-card">
+                      <img src="img/compra-slide2.jpg" alt="">
+                    </div>
+                    <div class="contenido-card">
+                      <div class="titulo">Nombre del producto</div>
+                      <div class="sub-titulo-precio">L.150</div>
+                      <div class="botones-card">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore nisi mollitia, voluptate vero ipsa quo temporibus, quaerat enim doloribus hic magni, beatae. In est necessitatibus ullam facilis beatae, dolores tempore, sit quod atque mollitia nesciunt deserunt eos, recusandae ducimus molestiae!</p>
+                        <button type="button" name="button">Comprar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 pb-5">
+                  <div class="card">
+                    <div class="imagen-card">
+                      <img src="img/compra-slide2.jpg" alt="">
+                    </div>
+                    <div class="contenido-card">
+                      <div class="titulo">Nombre del producto</div>
+                      <div class="sub-titulo-precio">L.150</div>
+                      <div class="botones-card">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore nisi mollitia, voluptate vero ipsa quo temporibus, quaerat enim doloribus hic magni, beatae. In est necessitatibus ullam facilis beatae, dolores tempore, sit quod atque mollitia nesciunt deserunt eos, recusandae ducimus molestiae!</p>
+                        <button type="button" name="button">Comprar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+<!-- IDEA: BEUN AQUI VAMOS....PARA HACER LO DEL CAMBIO DE PAGINA PRIMERO TENGO QUE GENRAR DINAMICAMENTE
+  TOOODOS LOS PRODUCTOS.... LUEGO BUSCAR DE QUE MANERA HCER UN IF(cantidadproductos=6)
+  para asi poner todos los demas productos en que no sean esos seis en HIDDEN
+  una vez que pase tendria que hacer otro conteo para ir agregando el numero de paginas y asi
+  ir avanzando en el json
+
+  tal vez tenga que usar algo como los childs de la etiqueta row
+
+
+ -->
+
+
+
+              <div class="row pt-4 pb-5 justify-content-center">
+                <ul class="d-flex" id="paginacion">
+                  <li><a href=""><</a></li>
+                  <li><a href="">1</a></li>
+                  <li><a href="">2</a></li>
+                  <li><a href="">3</a></li>
+                  <li><a href="">4</a></li>
+                  <li><a href="">5</a></li>
+                  <li><a href="">></a></li>
+                </ul>
+              </div>
+          </div>
+
+          <div class="modal-background-compra">
+            <!-- IDEA: CARD PARA EL MODAL PARA COMPRAR -->
+                <div class="producto-card">
+                  <nav>
+                      <i class="fas fa-arrow-left" id="flecha-regresar">  Regresar</i>
+                      <ul class="valoracion-estrellas-productos mb-2 mr-2">
+                        <li class="fas fa-star text-warning"></li>
+                        <li class="fas fa-star text-warning"></li>
+                        <li class="fas fa-star text-warning"></li>
+                        <li class="fas fa-star text-warning"></li>
+                        <li class="fas fa-star text-secondary"></li>
+                      </ul>
+                  </nav>
+                  <div class="producto-foto">
+                    <img src="img/raton-avatar2.png" alt="">
+                  </div>
+                  <div class="producto-descripcion">
+                    <h2 id="nombreProducto">Nombre del Producto</h2>
+                    <h4>Categoria del produto</h4>
+                    <h1>L.1,500</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam deleniti, dolore quibusdam reprehenderit nulla architecto exercitationem amet sunt corporis? Eius!</p>
+                    <button type="button" name="button" id="comprar"  data-toggle="modal" data-target="#modalFormularioComprar">Comprar</button>
+                    <button type="button" name="button" id="carrito" data-toggle="modal" data-target="#modalFormularioCarrito"><i class="fas fa-cart-plus"></i></button>
+                    <button type="button" name="button" id="comentarios" class="btn-comentarios"><i class="fas fa-comments"></i></button>
+                  </div>
+                </div>
+          </div>
+
+
+
+        <div class="modal-background-comentarios">
+
+
+          <div class="modal-comentarios container my-5 py-5 px-5">
+            <section class="text-dark mb-5 hola">
+
+              <i class="fas fa-times" id="cerrar-modal-comentarios"></i>
+
+              <h3 class="font-weight-bold text-center mb-5">
+                Comentarios
+              </h3>
+
+              <div class="media mb-3 pb-5 border-bottom shadow">
+                <img class="img-circle rounded-circle z-depth-1-half d-flex mr-3" id="cliente-imagen" src="https://mdbootstrap.com/img/Photos/Avatars/img (8).jpg" alt="">
+                <div class="media-body">
+                  <a href="#"> <h5 class="nombre-cliente text-info font-weight-bold">Juan DKU</h5> </a>
+                  <ul class="likes-comentario mb-2 list-inline">
+                    <li class="far fa-thumbs-up text-primary list-inline-item" id="like-btn"></li>
+                    <li class="text-secondary list-unstyled list-inline-item">25 likes</li>
+                    <li class="far fa-thumbs-down text-danger list-inline-item" id="dislike-btn"></li>
+                    <li class="text-secondary list-unstyled list-inline-item">5 dislikes</li>
+                  </ul>
+
+
+                  <div class="card-fecha">
+                    <ul class="list-unstyled mb-1">
+                       <li class="comment-date font-small text-muted">
+                         <i class="far fa-clock"></i> 05/10/2015</li>
+                     </ul>
+                  </div>
+
+                  <p class="text-dark text-justify">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                    nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                </div>
+              </div>
+
+              <div class="media mb-3 pb-3 border-bottom shadow">
+                <img class="img-circle rounded-circle z-depth-1-half d-flex mr-3" id="cliente-imagen" src="https://mdbootstrap.com/img/Photos/Avatars/img (8).jpg" alt="">
+                <div class="media-body">
+                  <a href="#"> <h5 class="nombre-cliente text-info font-weight-bold">Juan DKU</h5> </a>
+                  <ul class="likes-cometario mb-2 list-inline">
+                    <li class="far fa-thumbs-up text-primary list-inline-item"></li>
+                    <li class="text-secondary list-unstyled list-inline-item">25 likes</li>
+                    <li class="far fa-thumbs-down text-danger list-inline-item"></li>
+                    <li class="text-secondary list-unstyled list-inline-item">5 dislikes</li>
+                  </ul>
+
+                  <div class="card-fecha">
+                    <ul class="list-unstyled mb-1">
+                       <li class="comment-date font-small text-muted">
+                         <i class="far fa-clock"></i> 05/10/2015</li>
+                     </ul>
+                  </div>
+
+                  <p class="text-dark text-justify">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                    nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                </div>
+              </div>
+
+
+              <div class="media mb-3 pb-3 border-bottom  shadow">
+                <img class="img-circle rounded-circle z-depth-1-half d-flex mr-3" id="cliente-imagen" src="https://mdbootstrap.com/img/Photos/Avatars/img (8).jpg" alt="">
+                <div class="media-body">
+                  <a href="#"> <h5 class="nombre-cliente text-info font-weight-bold">Juan DKU</h5> </a>
+                  <ul class="likes-cometario mb-2 list-inline">
+                    <li class="far fa-thumbs-up text-primary list-inline-item"></li>
+                    <li class="text-secondary list-unstyled list-inline-item">25 likes</li>
+                    <li class="far fa-thumbs-down text-danger list-inline-item"></li>
+                    <li class="text-secondary list-unstyled list-inline-item">5 dislikes</li>
+                  </ul>
+
+
+                  <div class="card-fecha">
+                    <ul class="list-unstyled mb-1">
+                       <li class="comment-date font-small text-muted">
+                         <i class="far fa-clock"></i> 05/10/2015</li>
+                     </ul>
+                  </div>
+
+                  <p class="text-dark text-justify">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                    nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                </div>
+              </div>
+
+              <div class="input-group contenedor-comentario pt-5" style="margin-bottom: 10px;">
+                <h4>Agrega un comentario</h4>
+                <input  style="width: 95%; border-radius:5px;"type="text" placeholder="Escribe un comentario sobre el producto...">
+                <div class="input-group-append" style="width:5%">
+                  <span class="input-group-text"><i class="fas fa-check-circle fa-2x"></i></span>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <!--<button type="button" name="button" class="btn-comentarios">COmentarios</button>-->
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalFormularioComprar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">¡Ya casi compras el producto!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label for="inputState">Elige una sucursal donde comprar</label>
+        <select id="inputState" class="form-control">
+          <option selected>Elegir sucursal</option>
+          <option>sucursal 1</option>
+          <option>sucursal 2</option>
+          <option>sucursal 3</option>
+        </select>
+
+        <p class="py-3 my-3">Unidades disponibles en la sucursal seleccionada: 25 unidades</p>
+
+        <form class="form-inline">
+          <label for="unidadesComprar">Unidades a comprar</label>
+          <input type="text" id="unidadesComprar" class="form-control ml-sm-2">
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success">Comprar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="modalFormularioCarrito" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">¡Agregaras este produto al carrito!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label for="inputState">Elige una sucursal donde comprar</label>
+        <select id="inputState" class="form-control">
+          <option selected>Elegir sucursal</option>
+          <option>sucursal 1</option>
+          <option>sucursal 2</option>
+          <option>sucursal 3</option>
+        </select>
+
+        <p class="py-3 my-3">Unidades disponibles en la sucursal seleccionada: 25 unidades</p>
+
+        <form class="form-inline">
+          <label for="unidadesComprar">Unidades a comprar</label>
+          <input type="text" id="unidadesComprar" class="form-control ml-sm-2">
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success">Agregar al Carrito</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+          <!-- IDEA: PROBANDO COSAS -->
+
+          <button type="button" name="button">HOLA</button>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, rerum.</p>
+        </section>
+      </main>
+
+      <script src="js/jquery-3.4.1.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/landing.js"></script>
+      <script src="js/cards.js"> </script>
+  </body>
+</html>

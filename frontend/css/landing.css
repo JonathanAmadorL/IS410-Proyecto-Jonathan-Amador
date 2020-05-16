@@ -1,0 +1,251 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body{
+  /*background-color: rgb(94, 156, 158);*/
+  background-color: rgb(129, 72, 71);
+  width: 100%;
+  height: 100vh;
+}
+.navegacion{
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  min-height: 10vh;
+  background: transparent;
+  opacity: 0.7;
+  border: 1px solid rgb(68, 78, 77);
+  z-index: 1;
+  /*background-color: rgb(121, 87, 42);*/
+}
+
+.enlaces{
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+
+.enlaces li{
+  list-style: none;
+}
+
+.enlaces a{
+  color: rgb(226, 231, 226);
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.desplegar{
+  display: none;
+}
+
+.desplegar div{
+  width: 25px;
+  height: 3px;
+  background-color: rgb(221, 219, 222);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1024px){
+  .enlaces{
+    width: 60%;
+  }
+}
+
+
+@media screen and (max-width: 768px){
+  body{
+    overflow-x:hidden; /* IDEA: Todo lo que este en scrolling en eje x desaparece */
+  }
+  .enlaces{
+    position: absolute;
+    right: 0px;
+    height: 90vh;
+    top:10vh;
+    background-color: rgb(93, 131, 125);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translate(100%);
+    transition: transform 0.5s ease-in;
+  }
+  .enlaces li{
+    opacity: 0;
+  }
+
+  .desplegar{
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.desplegar-activo{
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+  from{
+    opacity: 0;
+    transform: translate(50px);
+  }
+  to{
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
+
+.animacion .linea1{
+  transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.animacion .linea2{
+  opacity:0;
+}
+
+.animacion .linea3{
+  transform: rotate(45deg) translate(-5px,-6px);
+}
+
+
+
+/* IDEA: INICIO DE ESTILOS PARA EL SLIDER */
+
+ol{
+  list-style: none;
+}
+
+.slider-main{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+}
+
+.slider li{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  z-index: 0;
+}
+
+.slider img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider .slider-contenido{
+  position: absolute;
+  top: 70vh;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column; /* IDEA: una manera pra no complicarselaa con poner las cosas en distintos divs  */
+  padding: 10px 70px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  color: white;
+  z-index: 1;
+
+}
+
+.slider .slider-contenido h4{
+    /* IDEA: OJOOOO ELEGIR UNA FUENTE PARA TODO ESTE PROYECTO */
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.slider .slider-contenido button{
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+.slider .slider-contenido #btn-slider{
+  background: rgba(46, 50, 49,0.1);
+  color: white;
+  padding: 0.2em 0.8em;
+  border-radius: 10%;
+}
+
+.slider .slider-contenido #btn-slider:hover{
+  border: 0.5px solid grey;
+  color: rgb(61, 65, 70);
+  text-decoration: none;
+}
+
+
+.slider {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.circulos{
+  position: absolute;
+  bottom: 5vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.circulos li{
+  font-size: 15px;
+  margin: 2px 10px;
+  cursor: pointer;
+  color: #484549;
+}
+
+.prev, .next{
+  position: absolute;
+  top: 0;
+  height: 100%; /* IDEA: para centrarlo verticalmente */
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 40px;
+  z-index: 2; /*para que esten mas arriba (accesible) a las imagenes que tenia z index = 1*/
+}
+
+/* IDEA: separamos cada flecha y le posicionas en su debido lugar */
+.prev{
+  left: 15px;
+}
+
+.next{
+  right: 15px;
+}
+
+
+.boton-slide{
+  color: #20bf6b !important;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #ffffff;
+  padding: 15px;
+  border: 4px solid #20bf6b !important;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.3s ease 0s;
+}
+
+.boton-slide:hover{
+  color: #494949 !important;
+  border-radius: 50px;
+  border-color: #494949 !important;
+  transition: all 0.3s ease 0s;
+}

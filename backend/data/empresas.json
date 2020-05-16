@@ -1,0 +1,195 @@
+[
+  {
+    "codigoEmpresa": "empresa_5ea2131df1074",
+    "nombreEmpresa": "HondutelDKU",
+    "emailEmpresa": "hondutel@honduras.xd",
+    "passwordEmpresa": "honduras123",
+    "paisEmpresa": "Honduras",
+    "longitudEmpresa": "1235",
+    "latitudEmpresa": "155630",
+    "bannerEmpresa": "",
+    "logoEmpresa": "logo.jpg",
+    "redesSocialesEmpresa": {
+      "facebookEmpresa": "HondutelDKUFB",
+      "twitterEmpresa": "",
+      "instragramEmpresa": ""
+    },
+    "descripcionEmpresa": "una empresa de hondutel dku",
+    "productos": [
+      {
+        "codigoProducto": "producto_5ea27792dff99",
+        "nombreProducto": "TelefonoDKU 3000",
+        "precioProducto": 1500,
+        "descuentoProducto": 700,
+        "descripcionProducto": "Un buen telefono de la compa\u00f1ia de la casa",
+        "imagenProducto": "telefono.jpg",
+        "cantidadProducto": "10",
+        "comentarios": [
+          {
+            "codigoComentario": "comentario_5ea3c77317dbd",
+            "codigoCliente": "cliente_1",
+            "nombreCliente": "Jason DKU",
+            "contenido": "a ver que pex",
+            "imagenCliente": "imagen.png"
+          },
+          {
+            "codigoComentario": "comentario_5ea3c7e567662",
+            "codigoCliente": "cliente_1",
+            "nombreCliente": "Jason DKU",
+            "contenido": "este producto se ve cool, lo comprare",
+            "imagenCliente": "imagen.png"
+          },
+          {
+            "codigoComentario": "comentario_5ea3c82958d58",
+            "codigoCliente": "cliente_1",
+            "nombreCliente": "David DKU",
+            "contenido": "Ese Jason esta lobacho, este producto no sirve (no soy de la competncia :V)",
+            "imagenCliente": "imagen.png"
+          }
+        ]
+      },
+      {
+        "codigoProducto": "producto_5eabbf3a3f8d5",
+        "nombreProducto": "TelefonoDKU 3050",
+        "precioProducto": 1700,
+        "descuentoProducto": 350,
+        "descripcionProducto": "Un buen telefono de la compa\u00f1ia de la casa",
+        "imagenProducto": "telefono.jpg",
+        "cantidadProducto": "20"
+      }
+    ],
+    "plan": {
+      "tipoPlan": "Basico",
+      "precioPlan": "$5/mes",
+      "productosRestantes": 3,
+      "unidadesProducto": 15
+    }
+  },
+  {
+    "codigoEmpresa": "empresa_5ea213a169b7d",
+    "nombreEmpresa": "La curacao",
+    "emailEmpresa": "curacao@siombe.xd",
+    "passwordEmpresa": "curacao123",
+    "paisEmpresa": "Honduras",
+    "longitudEmpresa": "15205",
+    "latitudEmpresa": "155661",
+    "bannerEmpresa": "",
+    "logoEmpresa": "notengo.jpg",
+    "redesSocialesEmpresa": {
+      "facebookEmpresa": "La curaco",
+      "twitterEmpresa": "CuracaoTW",
+      "instragramEmpresa": ""
+    },
+    "descripcionEmpresa": "no se que pex",
+    "plan": {
+      "tipoPlan": "Intermedio",
+      "precioPlan": "$15 / mes",
+      "productosRestantes": 10,
+      "unidadesProducto": 30
+    }
+  },
+  {
+    "codigoEmpresa": "empresa_5ea2147a13b11",
+    "nombreEmpresa": "Mister Lee",
+    "emailEmpresa": "misterlee@misterlee.com",
+    "passwordEmpresa": "misterlee12",
+    "paisEmpresa": "El Salvador",
+    "longitudEmpresa": "115.0",
+    "latitudEmpresa": "150",
+    "bannerEmpresa": "",
+    "logoEmpresa": "lee.png",
+    "redesSocialesEmpresa": {
+      "facebookEmpresa": "MisteLee",
+      "twitterEmpresa": "MLeeTW",
+      "instragramEmpresa": "MLee"
+    },
+    "descripcionEmpresa": "una empresa mas de los Lee",
+    "productos": [
+      {
+        "codigoProducto": "producto_5eacb3cea1caf",
+        "nombreProducto": "Puerta Lee",
+        "precioProducto": 12600,
+        "descuentoProducto": 5026,
+        "descripcionProducto": "una puerta Lee de buena calidad que te hara evolucionar tu casa",
+        "imagenProducto": "conejilloPuerta.jpg",
+        "cantidadProducto": "25",
+        "comentarios": [
+          {
+            "codigoComentario": "comentario_5eacdbf3e9cd7",
+            "codigoCliente": "cliente_5",
+            "nombreCliente": "Conejillo Cliente DKU",
+            "contenido": "soy el pinshe conejillo de indias para actualizar comentario, vamos a ver si funciona, si funcionaa carajo :v",
+            "imagenCliente": "imagenConejillo.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "codigoEmpresa": "empresa_5ea214b826b71",
+    "nombreEmpresa": "Agua Blue",
+    "emailEmpresa": "agua@blue.com",
+    "passwordEmpresa": "aguablue123",
+    "paisEmpresa": "Panama",
+    "longitudEmpresa": "4242422",
+    "latitudEmpresa": "424240",
+    "bannerEmpresa": "",
+    "logoEmpresa": "blue.jpg",
+    "redesSocialesEmpresa": {
+      "facebookEmpresa": "Agua Blue",
+      "twitterEmpresa": "",
+      "instragramEmpresa": "Ablue"
+    },
+    "descripcionEmpresa": "una empresa de agua azul pero blue"
+  },
+  {
+    "codigoEmpresa": "empresa_5ea216ab8f830",
+    "nombreEmpresa": "EmpresaTuani",
+    "emailEmpresa": "etuani@gl.co",
+    "passwordEmpresa": "tuani12345",
+    "paisEmpresa": "El salvador",
+    "longitudEmpresa": "41422",
+    "latitudEmpresa": "42222",
+    "bannerEmpresa": "",
+    "logoEmpresa": "loguito.png",
+    "redesSocialesEmpresa": {
+      "facebookEmpresa": "Tuani",
+      "twitterEmpresa": "",
+      "instragramEmpresa": ""
+    },
+    "descripcionEmpresa": "una empresa tuani"
+  },
+  {
+    "codigoEmpresa": "empresa_5ea239ab32e75",
+    "nombreEmpresa": "tecno",
+    "emailEmpresa": "tecno@lm.co",
+    "passwordEmpresa": "tecno123",
+    "paisEmpresa": "saasas",
+    "longitudEmpresa": "asasas",
+    "latitudEmpresa": "asass",
+    "bannerEmpresa": "",
+    "logoEmpresa": "asasas",
+    "redesSocialesEmpresa": "{\"facebookEmpresa\":\"Tecno\",\"twitterEmpresa\":\"\",\"instragramEmpresa\":\"tecno\"}",
+    "descripcionEmpresa": "no se"
+  },
+  {
+    "codigoEmpresa": "empresa_5ea23a58dfca8",
+    "nombreEmpresa": "Caribe",
+    "emailEmpresa": "caribenegocios@load.com",
+    "passwordEmpresa": "caribe12345",
+    "paisEmpresa": "Panama",
+    "longitudEmpresa": "12530",
+    "latitudEmpresa": "122204",
+    "bannerEmpresa": "Banner.jpg",
+    "logoEmpresa": "una foto.png",
+    "redesSocialesEmpresa": [
+      {
+        "facebookEmpresa": "CaribeFB",
+        "twitterEmpresa": "",
+        "instragramEmpresa": "CaribeIG"
+      }
+    ],
+    "descripcionEmpresa": "Queremos ser la mejor empresa con tematica del Caribe",
+    "productos": []
+  }
+]

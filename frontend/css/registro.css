@@ -1,0 +1,40 @@
+
+/* IDEA: AQUI INICIA LOS ESTILOS PARA EL FORM DE EMPRESAS */
+.modal-empresa-background2{
+  background-color: rgba(0, 0, 0, 0.85);
+  position: absolute;
+  top: 0;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_empresa{
+  border-radius: 18px ;
+}
+
+.modal-oculto-empresa2{
+  display: none !important;
+}
+
+.cerrar_modal_empresa{
+  display: flex !important;
+  justify-content: flex-end !important;
+  cursor: pointer !important;
+}
+
+
+
+.formulario-empresa h4{
+  color: white !important;
+}
+
+.input-group{
+  margin-bottom: 10px !important;
+}
+
+
+#msj-error{
+  visibility: hidden!important;
+}

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+
+    <title>Vista Empresa</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/vistaEmpresa.css">
+
+
+  </head>
+  <body>
+    <header class="portafolio bg-dark text-white text-center" id="portafolioEmpresa">
+      <!-- IDEA: PARA CUANDO QUERAMOS PONER LA IMAGEN SERA ASI el header -->
+          <!-- IDEA: <header class="portafolio bg-dark text-white text-center" style="background-image:url('img/compra-slide2.jpg'); background-size: cover;  background-repeat: no-repeat;"> -->
+          <div class="container d-flex align-items-center flex-column">
+            <img class="portafolio-imagen mb-5" src="img/raton-avatar2.png" alt="">
+            <h1 class="portafolio-nombre text-uppercase mb-0 p-2" style="background: rgba(0,0,0,0.2); border-radius:20px;">Nombre Empresa</h1>
+              <!-- IDEA: Division -->
+            <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+            </div>
+                <!-- IDEA: Seccion para saber que es, sie s empresa o cliente -->
+            <p class="portafolio-tipo font-weight-light mb-0">Empresa</p>
+            <div class="col-lg-4 mb-5 mt-4 mb-lg-0">
+              <a  class="btn btn-outline-light btn-social mx-1" href="#" data-toggle="popover" data-placement="bottom" title="Facebook" data-content="Red Social"><i class="fab fa-fw fa-facebook-f"></i></a>
+              <a class="btn btn-outline-light btn-social mx-1" href="#"><i class="fab fa-fw fa-twitter"></i></a>
+              <a class="btn btn-outline-light btn-social mx-1" href="#"><i class="fab fa-fw fa-instagram"></i></a>
+            </div>
+          </div>
+
+      </header>
+
+      <section class="page-section portfolio" id="portfolio" style="background: #e3e3e3;">
+        <div class="container">
+
+          <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Nuestras Sucursales</h2>
+
+          <div class="divider-custom">
+              <div class="divider-custom-line"></div>
+              <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+              <div class="divider-custom-line"></div>
+          </div>
+
+          <div class="row mb-5">
+
+            <div class="d-flex justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 pb-5">
+              <div class="card">
+                <div class="card card-agregar bg-secondary d-flex align-items-center justify-content-center h-100 w-100">
+                  <div class="portfolio-item-caption-content text-center text-white">
+                    <i class="icono-agregar fas fa-plus fa-3x"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 pb-5">
+              <div class="card">
+                <div class="card card-sucursal bg-success d-flex align-items-center justify-content-center h-100 w-100">
+                  <div class="portfolio-item-caption-content text-center text-white mb-3">
+                    <i class="icono-sucursal fas fa-store-alt fa-4x"></i>
+                  </div>
+                  <div class="row mt-5 text-center text-white">
+                    <h3 class="col-12 font-weight-bold">Nombre Sucursal</h3>
+                    <div class="col-12 mt-3 d-flex justify-content-around font-italic">
+                      <h4>Productos: </h4>
+                      <h4>5 disponibles</h4>
+                    </div>
+                    <h5 class="col-12 mt-3" >Click / Tap para ver más</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+          <!-- IDEA: AQUI ESTA LOS PRODUCTOS EN VENTA -->
+          <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Productos En Venta</h2>
+
+          <div class="divider-custom">
+              <div class="divider-custom-line"></div>
+              <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+              <div class="divider-custom-line"></div>
+          </div>
+
+          <div class="row mb-5" id="productos-venta">
+
+            <div class="d-flex justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 pb-5">
+              <div class="card">
+                <div class="card card-agregar bg-secondary d-flex align-items-center justify-content-center h-100 w-100">
+                  <div class="portfolio-item-caption-content text-center text-white">
+                    <i class="icono-agregar fas fa-plus fa-3x"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+
+          <!-- IDEA: AQUI ESTAN LOS PRODCUTOS VENDIDOS -->
+          <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Productos Vendidos</h2>
+
+          <div class="divider-custom">
+              <div class="divider-custom-line"></div>
+              <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+              <div class="divider-custom-line"></div>
+          </div>
+
+          <div class="row mb-5" >
+
+            <div class="d-flex justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 pb-5">
+              <div class="card">
+                <div class="imagen-card">
+                  <img src="img/compra-slide2.jpg" alt="">
+                </div>
+                <div class="contenido-card">
+                  <div class="titulo">Nombre del producto</div>
+                  <div class="sub-titulo-precio">L.150</div>
+                  <div class="botones-card">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore nisi mollitia, voluptate vero ipsa quo temporibus, quaerat enim doloribus hic magni, beatae. In est necessitatibus ullam facilis beatae, dolores tempore, sit quod atque mollitia nesciunt deserunt eos, recusandae ducimus molestiae!</p>
+                    <button type="button" name="button">Comprar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+
+            <!-- IDEA: Bloque para los planes -->
+          <div class="card-deck mb-3 text-center ">
+            <div class="card mb-4 shadow-sm " >
+              <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Básico</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$5 <small class="text-muted">/ mes</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>3 productos a vender</li>
+                  <li>15 unidades por productos</li>
+                  <li>3 Sucursales a promocionar</li>
+
+                </ul>
+                <button class="btn btn-lg btn-block btn-primary" type="button">Obtener</button>
+              </div>
+            </div>
+            <div class="card mb-4 shadow-sm">
+              <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Intermedio</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mes</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>10 productos a vender</li>
+                  <li>30 unidades por productos</li>
+                  <li>5 Sucursales a promocionar</li>
+
+                </ul>
+                <button class="btn btn-lg btn-block btn-primary" type="button">Obtener</button>
+              </div>
+            </div>
+            <div class="card mb-4 shadow-sm">
+              <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Avanzado</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$30 <small class="text-muted">/ mes</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>20 productos a vender</li>
+                  <li>Unidades por producto ilimitada</li>
+                  <li>10 Sucursales a promocionar</li>
+
+                </ul>
+                <button class="btn btn-lg btn-block btn-primary" type="button">Obtener</button>
+              </div>
+            </div>
+          </div>
+
+
+          <select  id="empresa-viendo" class="custom-select" style:"width: 200px;" onchange="listarProductosEnVenta(), portafolioEmpresa()">
+
+          </select>
+
+
+          <!-- IDEA: AQUI VA LA SECCION PARA EL MODAL DE EDITAR PRODUCTO -->
+          <div class="modal-background-editar">
+            <!-- IDEA: CARD PARA EL MODAL PARA COMPRAR -->
+                <div class="producto-card" id="produtoCard">
+
+                </div>
+          </div>
+
+
+          <!-- IDEA: LA SECCION PARA EDITAR -->
+
+
+          <!-- IDEA: LA Seccion de comentarios -->
+          <div class="modal-background-comentarios">
+
+
+            <div class="modal-comentarios container my-5 py-5 px-5">
+              <section class="text-dark mb-5" id="comentariosSeccion">
+
+                <i class="fas fa-times" id="cerrar-modal-comentarios" onclick="cerrarModalComentarios()"></i>
+
+                <h3 class="font-weight-bold text-center mb-5">
+                  Comentarios
+                </h3>
+
+                <div class="media mb-3 pb-5 border-bottom shadow">
+                  <img class="img-circle rounded-circle z-depth-1-half d-flex mr-3" id="cliente-imagen" src="https://mdbootstrap.com/img/Photos/Avatars/img (8).jpg" alt="">
+                  <div class="media-body">
+                    <a href="#"> <h5 class="nombre-cliente text-info font-weight-bold">Juan DKU</h5> </a>
+                    <ul class="likes-comentario mb-2 list-inline">
+                      <li class="far fa-thumbs-up text-primary list-inline-item" id="like-btn"></li>
+                      <li class="text-secondary list-unstyled list-inline-item">25 likes</li>
+                      <li class="far fa-thumbs-down text-danger list-inline-item" id="dislike-btn"></li>
+                      <li class="text-secondary list-unstyled list-inline-item">5 dislikes</li>
+                    </ul>
+
+
+                    <div class="card-fecha">
+                      <ul class="list-unstyled mb-1">
+                         <li class="comment-date font-small text-muted">
+                           <i class="far fa-clock"></i> 05/10/2015</li>
+                       </ul>
+                    </div>
+
+                    <p class="text-dark text-justify">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                      aliquip ex ea commodo
+                      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                      nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                  </div>
+                </div>
+
+                <div class="input-group contenedor-comentario pt-5" style="margin-bottom: 10px;">
+                  <h4>Agrega un comentario</h4>
+                  <input  style="width: 95%; border-radius:5px;"type="text" placeholder="Escribe un comentario sobre el producto...">
+                  <div class="input-group-append" style="width:5%">
+                    <span class="input-group-text"><i class="fas fa-check-circle fa-2x"></i></span>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+          </div>
+
+
+          <div class="modal fade" id="modalFormularioEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle">Editar datos del producto</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body" id="formularioEditar">
+                  <form class="" action="index.html" method="post">
+                    <label for="editarNombreProducto">Nombre Producto:</label>
+                    <input class="form-control" type="text" id="editarNombreProducto" value="Valor Anterior">
+
+                    <label for="editarPrecioProducto" class="my-2">Precio Producto:</label>
+                    <input class="form-control" type="number" id="editarPrecioProducto" value="500">
+
+                    <label for="editarPctDescProducto" class="my-2">% Descuento</label>
+                    <select class="form-control" name="" id="editarPctDescProducto">
+                      <option value="0"></option>
+                      <option value="0.20">20%</option>
+                      <option value="0.30">30%</option>
+                      <option value="0.40">40%</option>
+                      <option value="0.50">50%</option>
+                      <option value="0.70">70%</option>
+                    </select>
+
+                    <h5 class="my-2" id="editarDescuentoProducto">Descuento Producto: L. 800</h5>
+
+                    <label for="editarDescripcionProducto" class="my-2">Descripción Producto</label>
+                    <textarea class="form-control" id="editarDescripcionProducto">Descripcion anterior</textarea>
+
+                    <label for="editarImagenProducto" class="my-2">Imagen produto</label>
+                    <input class="form-control" type="text"  value="Valor Anterior" id="editarImagenProducto">
+
+                    <label for="editarCantidadProducto" class="my-2">Cantidad Producto</label>
+                    <input class="form-control" type="number" value="500" id="editarCantidadProducto">
+
+                    <h5 class="my-2">Elige las sucursales para tu producto</h5>
+
+
+                    <div class="custom-control custom-checkbox">
+                       <input type="checkbox" class="custom-control-input" id="sucursal1">
+                      <label class="custom-control-label" for="sucursal1">Sucursal 1</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                       <input type="checkbox" class="custom-control-input" id="sucursal2">
+                      <label class="custom-control-label" for="sucursal2">Sucursal 2</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                       <input type="checkbox" class="custom-control-input" id="sucursal3">
+                      <label class="custom-control-label" for="sucursal3">Sucursal 3</label>
+                    </div>
+                  </form>
+
+                  </div>
+                  <div class="modal-footer" id="botonesEditar">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success">Editar</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+
+
+          </div>
+      </section>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/perfil-empresa.js"></script>
+    <script src="js/cards.js"></script>
+  </body>
+</html>
