@@ -39,6 +39,8 @@
       <section class="page-section portfolio" id="portfolio" style="background: #e3e3e3;">
         <div class="container">
 
+          <!-- IDEA: LA SECCION DE SUCURSALES -->
+
           <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Nuestras Sucursales</h2>
 
           <div class="divider-custom">
@@ -47,10 +49,11 @@
               <div class="divider-custom-line"></div>
           </div>
 
-          <div class="row mb-5">
+          <div class="row mb-5" id="sucursales-seccion">
+
 
             <div class="d-flex justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 pb-5">
-              <div class="card">
+              <div class="card" data-toggle="modal" data-target="#modalAgregarSucursal">
                 <div class="card card-agregar bg-secondary d-flex align-items-center justify-content-center h-100 w-100">
                   <div class="portfolio-item-caption-content text-center text-white">
                     <i class="icono-agregar fas fa-plus fa-3x"></i>
@@ -103,9 +106,15 @@
               </div>
             </div>
 
+              <!-- IDEA: AQUI VAN LOS PRODUCTOS GENRADOS DINAMICAMENTE -->
 
 
           </div>
+
+
+
+
+
 
           <!-- IDEA: AQUI ESTAN LOS PRODCUTOS VENDIDOS -->
           <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Productos Vendidos</h2>
@@ -188,12 +197,12 @@
           </div>
 
 
-          <select  id="empresa-viendo" class="custom-select" style:"width: 200px;" onchange="listarProductosEnVenta(), portafolioEmpresa()">
+          <select  id="empresa-viendo" class="custom-select" style:"width: 200px;" onchange="listarProductosEnVenta(), portafolioEmpresa(), listarSucursales()">
 
           </select>
 
 
-          <!-- IDEA: AQUI VA LA SECCION PARA EL MODAL DE EDITAR PRODUCTO -->
+          <!-- IDEA: AQUI VA LA SECCION PARA EL MODAL DE Ver/editar PRODUCTO -->
           <div class="modal-background-editar">
             <!-- IDEA: CARD PARA EL MODAL PARA COMPRAR -->
                 <div class="producto-card" id="produtoCard">
@@ -267,52 +276,7 @@
                   </button>
                 </div>
                 <div class="modal-body" id="formularioEditar">
-                  <form class="" action="index.html" method="post">
-                    <label for="editarNombreProducto">Nombre Producto:</label>
-                    <input class="form-control" type="text" id="editarNombreProducto" value="Valor Anterior">
 
-                    <label for="editarPrecioProducto" class="my-2">Precio Producto:</label>
-                    <input class="form-control" type="number" id="editarPrecioProducto" value="500">
-
-                    <label for="editarPctDescProducto" class="my-2">% Descuento</label>
-                    <select class="form-control" name="" id="editarPctDescProducto">
-                      <option value="0"></option>
-                      <option value="0.20">20%</option>
-                      <option value="0.30">30%</option>
-                      <option value="0.40">40%</option>
-                      <option value="0.50">50%</option>
-                      <option value="0.70">70%</option>
-                    </select>
-
-                    <h5 class="my-2" id="editarDescuentoProducto">Descuento Producto: L. 800</h5>
-
-                    <label for="editarDescripcionProducto" class="my-2">Descripción Producto</label>
-                    <textarea class="form-control" id="editarDescripcionProducto">Descripcion anterior</textarea>
-
-                    <label for="editarImagenProducto" class="my-2">Imagen produto</label>
-                    <input class="form-control" type="text"  value="Valor Anterior" id="editarImagenProducto">
-
-                    <label for="editarCantidadProducto" class="my-2">Cantidad Producto</label>
-                    <input class="form-control" type="number" value="500" id="editarCantidadProducto">
-
-                    <h5 class="my-2">Elige las sucursales para tu producto</h5>
-
-
-                    <div class="custom-control custom-checkbox">
-                       <input type="checkbox" class="custom-control-input" id="sucursal1">
-                      <label class="custom-control-label" for="sucursal1">Sucursal 1</label>
-                    </div>
-
-                    <div class="custom-control custom-checkbox">
-                       <input type="checkbox" class="custom-control-input" id="sucursal2">
-                      <label class="custom-control-label" for="sucursal2">Sucursal 2</label>
-                    </div>
-
-                    <div class="custom-control custom-checkbox">
-                       <input type="checkbox" class="custom-control-input" id="sucursal3">
-                      <label class="custom-control-label" for="sucursal3">Sucursal 3</label>
-                    </div>
-                  </form>
 
                   </div>
                   <div class="modal-footer" id="botonesEditar">
@@ -323,6 +287,156 @@
                 </div>
               </div>
             </div>
+
+
+
+            <!-- Button trigger modal -->
+
+
+
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarSucursal">
+          Launch static backdrop modal
+        </button>
+
+        <!-- Modal Para crear sucursales-->
+        <div class="modal fade" id="modalAgregarSucursal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Agrega una nueva sucursal!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <form id="formulario_sucursal" novalidate autocomplete="off">
+                    <div class="form-group">
+                      <label for="nombreSucursal">Nombre Sucursal</label>
+                      <input type="text" class="form-control" id="nombreSucursal">
+                    </div>
+                    <div class="form-group">
+                      <span class="text-muted">Puede elegir entre colocar (Longitud y Latitud) o Dirección</span>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="longitudSucursal">Longitud: </label>
+                        <input type="text" class="form-control" id="longitudSucursal">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="latitudSucursal">Latitud</label>
+                        <input type="text" class="form-control" id="latitudSucursal">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="direccionSucursal">Dirección</label>
+                      <input type="text" class="form-control" id="direccionSucursal">
+                    </div>
+                    <div class="form-group text-secondary text-justify">
+                      <span>*NOTA: Cada vez que cree una nueva sucursal y quiera agregarle productos, debera ir al apartado de 'Editar Productos' y agregar la sucursal.</span>
+                    </div>
+
+                    <button type="button" class="btn btn-info mx-auto"  id="agregar-btn-sucursal" onclick="agregarSucursal()">Agregar</button>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+<!-- Modal PARA AGREGAR PRODUCTOS-->
+<div class="modal fade" id="modalAgregarProducto" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Agregar nuevo producto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+        <form class="" action="index.html" method="post" id="formularioAgregarProducto">
+          <div class="form-group">
+            <label for="editarNombreProducto">Nombre Producto:</label>
+            <input class="form-control" type="text" id="editarNombreProducto">
+          </div>
+
+          <div class="form-group">
+            <label for="editarPrecioProducto" class="my-2">Precio Producto:</label>
+            <input class="form-control" type="number" id="editarPrecioProducto" >
+          </div>
+
+          <div class="form-group">
+            <label for="editarPctDescProducto" class="my-2">% Descuento</label>
+            <select class="form-control" name="" id="editarPctDescProducto">
+              <option value="0"></option>
+              <option value="0.20">20%</option>
+              <option value="0.30">30%</option>
+              <option value="0.40">40%</option>
+              <option value="0.50">50%</option>
+              <option value="0.70">70%</option>
+            </select>
+          </div>
+
+
+          <span class="my-2 text-dark font-weight-bold" id="editarDescuentoProducto">Descuento Producto: L. 800 (tiene que ser funcion para encontrarlo)</span>
+
+          <div class="form-group">
+            <label for="editarDescripcionProducto" class="my-2">Descripción Producto</label>
+            <textarea class="form-control" id="editarDescripcionProducto"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="editarImagenProducto" class="my-2">Imagen produto</label>
+            <input class="form-control" type="text"  value="Valor Anterior" id="editarImagenProducto">
+
+          </div>
+
+          <div class="form-group">
+            <label for="editarCantidadProducto" class="my-2">Cantidad Producto</label>
+            <input class="form-control" type="number"  id="editarCantidadProducto">
+
+          </div>
+
+
+          <h5 class="my-2">Elige las sucursales para tu producto</h5>
+
+          <div class="form-group" id="lista-sucursales">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="sucursal11">
+              <label class="custom-control-label" for="sucursal11">Sucursal 1</label>
+            </div>
+
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="sucursal22">
+              <label class="custom-control-label" for="sucursal22">Sucursal 2</label>
+            </div>
+
+            <div class="custom-control custom-checkbox mb-4">
+              <input type="checkbox" class="custom-control-input" id="sucursal33">
+              <label class="custom-control-label" for="sucursal33">Sucursal 3</label>
+            </div>
+
+          </div>
+
+          <button type="button" class="btn btn-info mx-auto" disabled>Agregar</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Entendido</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 
 

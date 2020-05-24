@@ -22,6 +22,8 @@ p {
 }
 .portafolio .portafolio-imagen {
   width: 15rem;
+  height: 15rem;
+  object-fit: fill;
 }
 
 @media (min-width: 992px) {

@@ -36,11 +36,11 @@
 
   public function guardarProducto(){
 
-    // IDEA: LEEMOS EL ARCHIVO PARA PODER AGREGAR UNA NUEVA EMPRESA
+    // IDEA: LEEMOS EL ARCHIVO PARA PODER AGREGAR UNA NUEVA PRODUCTO
     $contenidoArchivoProductos = file_get_contents('../data/productos.json');
     $productos= json_decode($contenidoArchivoProductos,true);
 
-    // IDEA: AQUI SE CREA EL OBEJTO EMPRESA CON LOS ATRIBUTOS A GAURDAR
+    // IDEA: AQUI SE CREA EL OBEJTO PRODUCTO CON LOS ATRIBUTOS A GAURDAR
     $codigoProducto= uniqid('producto_');
 
     $productos[]=array(
@@ -56,7 +56,7 @@
     "cantidadProducto" => $this ->cantidadProducto
     );
 
-      // IDEA: AQUI SOBREEESCRIBIMOS EL ARCHIVO PARA GUARDAR LA EMPRESA
+      // IDEA: AQUI SOBREEESCRIBIMOS EL ARCHIVO PARA GUARDAR EL PRODUCTO
 
     $archivoProductos= fopen("../data/productos.json","w");
     fwrite($archivoProductos,json_encode($productos));
@@ -92,25 +92,10 @@
   }
 
   public static function obtenerProductos(){
-    $contenidoArchivoProdutos=file_get_contents("../data/productos.json");
-    echo  $contenidoArchivoProdutos;
+    $contenidoArchivoProductos=file_get_contents("../data/productos.json");
+    echo  $contenidoArchivoProductos;
   }
 
-
-  public static function obtenerProductosEmpresa($idEmpresa){ //para obtenr producto de esa empresa
-    $contenidoArchivoEmpresas= file_get_contents('../data/empresas.json');
-    $empresas = json_decode($contenidoArchivoEmpresas,true);
-    $empresa= null;
-    for($i=0; $i<sizeof($empresas);$i++){
-      if($empresas[$i]["codigoEmpresa"]== $idEmpresa){
-        $empresa = $empresas[$i];
-        break;
-      }
-
-    }
-    echo $empresas["productos"];
-
-  }
 
   public static function obtenerProducto($idProducto){
     $contenidoArchivoProductos= file_get_contents('../data/productos.json');
@@ -203,8 +188,8 @@
 
 
   public static function eliminarProducto($idProducto){
-    $contenidoArchivoProdutos= file_get_contents('../data/productos.json');
-    $productos= json_decode($contenidoArchivoProdutos,true);
+    $contenidoArchivoProductos= file_get_contents('../data/productos.json');
+    $productos= json_decode($contenidoArchivoProductos,true);
 
     for($i=0; $i<sizeof($productos); $i++){
       if($productos[$i]["codigoProducto"]== $idProducto){

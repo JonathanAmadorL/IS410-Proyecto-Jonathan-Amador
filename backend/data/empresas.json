@@ -9,11 +9,14 @@
     "latitudEmpresa": "155630",
     "bannerEmpresa": "",
     "logoEmpresa": "logo.jpg",
-    "redesSocialesEmpresa": {
+    "redesSocialesEmpresa":
+    [
+      {
       "facebookEmpresa": "HondutelDKUFB",
       "twitterEmpresa": "",
-      "instragramEmpresa": ""
-    },
+      "instagramEmpresa": ""
+    }
+  ],
     "descripcionEmpresa": "una empresa de hondutel dku",
     "productos": [
       {
@@ -63,7 +66,45 @@
       "precioPlan": "$5/mes",
       "productosRestantes": 3,
       "unidadesProducto": 15
-    }
+    },
+    "sucursales": [
+      {
+        "codigoSucursal": "sucursal_5ec4b58f552df",
+        "codigoEmpresa": "empresa_5ea2131df1074",
+        "nombreEmpresa": "HondutelDKU",
+        "nombreSucursal": "Sucursal No1",
+        "longitudSucursal": "125622",
+        "latitudSucursal": "-12560",
+        "direccionSucursal": "colonia dku"
+      },
+      {
+        "codigoSucursal": "sucursal_5ec4b5e034ea5",
+        "codigoEmpresa": "empresa_5ea2131df1074",
+        "nombreEmpresa": "HondutelDKU",
+        "nombreSucursal": "Sucursal Salavdor",
+        "longitudSucursal": "12233",
+        "latitudSucursal": "132660",
+        "direccionSucursal": "colonia en el salvador dku"
+      },
+      {
+        "codigoSucursal": "sucursal_5ec4b6d4468af",
+        "codigoEmpresa": "empresa_5ea2131df1074",
+        "nombreEmpresa": "HondutelDKU",
+        "nombreSucursal": "Sucursal 3",
+        "longitudSucursal": "21262",
+        "latitudSucursal": "2626",
+        "direccionSucursal": "direccion 3 dku"
+      },
+      {
+        "codigoSucursal": "sucursal_5ec4bb83be316",
+        "codigoEmpresa": "empresa_5ea2131df1074",
+        "nombreEmpresa": "HondutelDKU",
+        "nombreSucursal": "Sucursal 4",
+        "longitudSucursal": "12563",
+        "latitudSucursal": "212663",
+        "direccionSucursal": "otra direccioooon"
+      }
+    ]
   },
   {
     "codigoEmpresa": "empresa_5ea213a169b7d",
@@ -75,18 +116,41 @@
     "latitudEmpresa": "155661",
     "bannerEmpresa": "",
     "logoEmpresa": "notengo.jpg",
-    "redesSocialesEmpresa": {
+    "redesSocialesEmpresa":
+    [
+      {
       "facebookEmpresa": "La curaco",
       "twitterEmpresa": "CuracaoTW",
-      "instragramEmpresa": ""
-    },
+      "instagramEmpresa": ""
+    }
+  ],
     "descripcionEmpresa": "no se que pex",
     "plan": {
       "tipoPlan": "Intermedio",
       "precioPlan": "$15 / mes",
       "productosRestantes": 10,
       "unidadesProducto": 30
-    }
+    },
+    "sucursales": [
+      {
+        "codigoSucursal": "sucursal_5ec5e5bd433bc",
+        "codigoEmpresa": "empresa_5ea213a169b7d",
+        "nombreEmpresa": "La curacao",
+        "nombreSucursal": "Sucursal Curacao",
+        "longitudSucursal": "12260",
+        "latitudSucursal": "1260",
+        "direccionSucursal": "la direccion dku"
+      },
+      {
+        "codigoSucursal": "sucursal_5ec5e666175dd",
+        "codigoEmpresa": "empresa_5ea213a169b7d",
+        "nombreEmpresa": "La curacao",
+        "nombreSucursal": "Otra sucursal",
+        "longitudSucursal": "12660",
+        "latitudSucursal": "126250",
+        "direccionSucursal": "otra direccioon"
+      }
+    ]
   },
   {
     "codigoEmpresa": "empresa_5ea2147a13b11",
@@ -98,11 +162,14 @@
     "latitudEmpresa": "150",
     "bannerEmpresa": "",
     "logoEmpresa": "lee.png",
-    "redesSocialesEmpresa": {
+    "redesSocialesEmpresa":
+    [
+      {
       "facebookEmpresa": "MisteLee",
       "twitterEmpresa": "MLeeTW",
-      "instragramEmpresa": "MLee"
-    },
+      "instagramEmpresa": "MLee"
+    }
+  ],
     "descripcionEmpresa": "una empresa mas de los Lee",
     "productos": [
       {
@@ -123,6 +190,35 @@
           }
         ]
       }
+    ],
+    "sucursales": [
+      {
+        "codigoSucursal": "sucursal_5ec4b665e7289",
+        "codigoEmpresa": "empresa_5ea2147a13b11",
+        "nombreEmpresa": "Mister Lee",
+        "nombreSucursal": "Sucursal Lee HN",
+        "longitudSucursal": "22450",
+        "latitudSucursal": "15500",
+        "direccionSucursal": "colonia Lee en honduras"
+      },
+      {
+        "codigoSucursal": "sucursal_5ec4b971d8b16",
+        "codigoEmpresa": "empresa_5ea2147a13b11",
+        "nombreEmpresa": "Mister Lee",
+        "nombreSucursal": "Segunda Lee",
+        "longitudSucursal": "1212566",
+        "latitudSucursal": "1212562",
+        "direccionSucursal": "otra direccion lee mas"
+      },
+      {
+        "codigoSucursal": "sucursal_5ec5d0f4c17a4",
+        "codigoEmpresa": "empresa_5ea2147a13b11",
+        "nombreEmpresa": "Mister Lee",
+        "nombreSucursal": "Tercera Lee",
+        "longitudSucursal": "1260",
+        "latitudSucursal": "1260",
+        "direccionSucursal": "no se que direccion"
+      }
     ]
   },
   {
@@ -135,11 +231,14 @@
     "latitudEmpresa": "424240",
     "bannerEmpresa": "",
     "logoEmpresa": "blue.jpg",
-    "redesSocialesEmpresa": {
+    "redesSocialesEmpresa":
+    [
+     {
       "facebookEmpresa": "Agua Blue",
       "twitterEmpresa": "",
-      "instragramEmpresa": "Ablue"
-    },
+      "instagramEmpresa": "Ablue"
+    }
+  ],
     "descripcionEmpresa": "una empresa de agua azul pero blue"
   },
   {
@@ -152,11 +251,14 @@
     "latitudEmpresa": "42222",
     "bannerEmpresa": "",
     "logoEmpresa": "loguito.png",
-    "redesSocialesEmpresa": {
+    "redesSocialesEmpresa":
+    [
+    {
       "facebookEmpresa": "Tuani",
       "twitterEmpresa": "",
-      "instragramEmpresa": ""
-    },
+      "instagramEmpresa": ""
+    }
+  ],
     "descripcionEmpresa": "una empresa tuani"
   },
   {
@@ -169,7 +271,9 @@
     "latitudEmpresa": "asass",
     "bannerEmpresa": "",
     "logoEmpresa": "asasas",
-    "redesSocialesEmpresa": "{\"facebookEmpresa\":\"Tecno\",\"twitterEmpresa\":\"\",\"instragramEmpresa\":\"tecno\"}",
+    "redesSocialesEmpresa": [
+      {"facebookEmpresa":"Tecno","twitterEmpresa":"","instagramEmpresa":"tecno"}
+    ],
     "descripcionEmpresa": "no se"
   },
   {
@@ -186,10 +290,106 @@
       {
         "facebookEmpresa": "CaribeFB",
         "twitterEmpresa": "",
-        "instragramEmpresa": "CaribeIG"
+        "instagramEmpresa": "CaribeIG"
       }
     ],
     "descripcionEmpresa": "Queremos ser la mejor empresa con tematica del Caribe",
-    "productos": []
+    "productos": [],
+    "sucursales": [
+      {
+        "codigoSucursal": "sucursal_5ec5e6ea71a63",
+        "codigoEmpresa": "empresa_5ea23a58dfca8",
+        "nombreEmpresa": "Caribe",
+        "nombreSucursal": "Sucursal 1 ",
+        "longitudSucursal": "1262",
+        "latitudSucursal": "12620",
+        "direccionSucursal": "una sucursal"
+      },
+      {
+        "codigoSucursal": "sucursal_5ec5e7200da7c",
+        "codigoEmpresa": "empresa_5ea23a58dfca8",
+        "nombreEmpresa": "Caribe",
+        "nombreSucursal": "Sucursal 2 caribe",
+        "longitudSucursal": "13260",
+        "latitudSucursal": "1260",
+        "direccionSucursal": "otra caribedireccion :v"
+      }
+    ]
+  },
+  {
+    "codigoEmpresa": "empresa_5ec30887b8143",
+    "nombreEmpresa": "Empresa de Prueba",
+    "emailEmpresa": "empresaprueba@gprueba.com",
+    "passwordEmpresa": "asd.456456",
+    "paisEmpresa": "Slavador",
+    "longitudEmpresa": "1563.56",
+    "latitudEmpresa": "-4553.04",
+    "bannerEmpresa": "",
+    "logoEmpresa": "https://blog.hotmart.com/blog/2017/01/post_url_940x606-670x432.png",
+    "redesSocialesEmpresa": [
+      {
+        "facebookEmpresa": "ORUEBAFB",
+        "twitterEmpresa": "",
+        "instagramEmpresa": ""
+      }
+    ],
+    "descripcionEmpresa": "UNA prueba de empresa"
+  },
+  {
+    "codigoEmpresa": "empresa_5ec30b5be6514",
+    "nombreEmpresa": "sasasas",
+    "emailEmpresa": "asasasas@lff.lop",
+    "passwordEmpresa": "asd.456456",
+    "paisEmpresa": "gaute",
+    "longitudEmpresa": "54551",
+    "latitudEmpresa": "1515151",
+    "bannerEmpresa": "",
+    "logoEmpresa": "https://blog.hotmart.com/blog/2017/01/post_url_940x606-670x432.png",
+    "redesSocialesEmpresa": [
+      {
+        "facebookEmpresa": "asasasa",
+        "twitterEmpresa": "",
+        "instagramEmpresa": ""
+      }
+    ],
+    "descripcionEmpresa": "asasasas"
+  },
+  {
+    "codigoEmpresa": "empresa_5ec30be7865a9",
+    "nombreEmpresa": "asabdbabdd",
+    "emailEmpresa": "adjbdbdbsdj@email.lop",
+    "passwordEmpresa": "asd.456456",
+    "paisEmpresa": "costa rica",
+    "longitudEmpresa": "1515151",
+    "latitudEmpresa": "5155151",
+    "bannerEmpresa": "",
+    "logoEmpresa": "https://blog.hotmart.com/blog/2017/01/post_url_940x606-670x432.png",
+    "redesSocialesEmpresa": [
+      {
+        "facebookEmpresa": "assaasdzd",
+        "twitterEmpresa": "",
+        "instagramEmpresa": ""
+      }
+    ],
+    "descripcionEmpresa": "algo dku"
+  },
+  {
+    "codigoEmpresa": "empresa_5ec30c38dcf78",
+    "nombreEmpresa": "asasasas",
+    "emailEmpresa": "asasadd@sjjdd.nom",
+    "passwordEmpresa": "asd.456456",
+    "paisEmpresa": "panama",
+    "longitudEmpresa": "1515",
+    "latitudEmpresa": "15650",
+    "bannerEmpresa": "",
+    "logoEmpresa": "https://blog.hotmart.com/blog/2017/01/post_url_940x606-670x432.png",
+    "redesSocialesEmpresa": [
+      {
+        "facebookEmpresa": "asassas",
+        "twitterEmpresa": "",
+        "instagramEmpresa": ""
+      }
+    ],
+    "descripcionEmpresa": "asasas"
   }
 ]

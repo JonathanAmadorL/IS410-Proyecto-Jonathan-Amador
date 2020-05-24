@@ -34,7 +34,7 @@ function portafolioEmpresa(){
     <!-- IDEA: PARA CUANDO QUERAMOS PONER LA IMAGEN SERA ASI el header -->
         <!-- IDEA: <header class="portafolio bg-dark text-white text-center" style="background-image:url('img/compra-slide2.jpg'); background-size: cover;  background-repeat: no-repeat;"> -->
         <div class="container d-flex align-items-center flex-column">
-          <img class="portafolio-imagen mb-5" src="img/raton-avatar2.png" alt="">
+          <img class="portafolio-imagen mb-5 rounded-circle" src="${perfil.logoEmpresa}" alt="">
           <h1 class="portafolio-nombre text-uppercase mb-0 p-2" style="background: rgba(0,0,0,0.2); border-radius:20px;">${perfil.nombreEmpresa}</h1>
             <!-- IDEA: Division -->
           <div class="divider-custom divider-light">
@@ -45,9 +45,9 @@ function portafolioEmpresa(){
               <!-- IDEA: Seccion para saber que es, sie s empresa o cliente -->
           <p class="portafolio-tipo font-weight-light mb-0">Empresa</p>
           <div class="col-lg-4 mb-5 mt-4 mb-lg-0">
-            <a class="btn btn-outline-light btn-social mx-1" href="#" data-toggle="popover" data-placement="bottom" title="Facebook" data-content="${perfil.redesSocialesEmpresa.facebookEmpresa}" onclick="verRedesSociales()" ><i class="fab fa-fw fa-facebook-f" style="color: #1877f2;"></i></a>
-            <a class="btn btn-outline-light btn-social mx-1" href="#" data-toggle="popover" data-placement="bottom" title="Twitter" data-content="${perfil.redesSocialesEmpresa.twitterEmpresa}" onclick="verRedesSociales()"><i class="fab fa-fw fa-twitter" style="color:  rgba(27, 149, 224, 1);;"></i></a>
-            <a class="btn btn-outline-light btn-social mx-1" href="#" data-toggle="popover" data-placement="bottom" title="Instagram" data-content="${perfil.redesSocialesEmpresa.instagramEmpresa}" onclick="verRedesSociales()"><i class="fab fa-fw fa-instagram" style="color: #f56040;"></i></a>
+            <a class="btn btn-outline-light btn-social mx-1" href="#" data-toggle="popover" data-placement="bottom" title="Facebook" data-content="${perfil.redesSocialesEmpresa[0].facebookEmpresa}" onclick="verRedesSociales()" ><i class="fab fa-fw fa-facebook-f" style="color: #1877f2;"></i></a>
+            <a class="btn btn-outline-light btn-social mx-1" href="#" data-toggle="popover" data-placement="bottom" title="Twitter" data-content="${perfil.redesSocialesEmpresa[0].twitterEmpresa}" onclick="verRedesSociales()"><i class="fab fa-fw fa-twitter" style="color:  rgba(27, 149, 224, 1);;"></i></a>
+            <a class="btn btn-outline-light btn-social mx-1" href="#" data-toggle="popover" data-placement="bottom" title="Instagram" data-content="${perfil.redesSocialesEmpresa[0].instagramEmpresa}" onclick="verRedesSociales()"><i class="fab fa-fw fa-instagram" style="color: #f56040;"></i></a>
           </div>
         </div>
 
@@ -71,7 +71,7 @@ function listarProductosEnVenta(){
       document.getElementById('productos-venta').innerHTML=
       `
       <div class="d-flex justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 pb-5">
-        <div class="card">
+        <div class="card" data-toggle="modal" data-target="#modalAgregarProducto">
           <div class="card card-agregar bg-secondary d-flex align-items-center justify-content-center h-100 w-100">
             <div class="portfolio-item-caption-content text-center text-white">
               <i class="icono-agregar fas fa-plus fa-3x"></i>
@@ -107,7 +107,7 @@ function listarProductosEnVenta(){
       document.getElementById('productos-venta').innerHTML=
       `
       <div class="d-flex justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 pb-5">
-        <div class="card">
+        <div class="card" data-toggle="modal" data-target="#modalAgregarProducto">
           <div class="card card-agregar bg-secondary d-flex align-items-center justify-content-center h-100 w-100">
             <div class="portfolio-item-caption-content text-center text-white">
               <i class="icono-agregar fas fa-plus fa-3x"></i>
@@ -121,6 +121,86 @@ function listarProductosEnVenta(){
     console.error(error);
   });
 }
+
+
+function listarSucursales(){
+  axios({
+    method: 'get',
+    url: '../backend/api/empresas.php?id='+document.getElementById('empresa-viendo').value,
+    responseType: 'json'
+  }).then(res=>{
+    console.log(res.data);
+    if(res.data.sucursales){
+      sucursales=res.data.sucursales;
+      document.getElementById('sucursales-seccion').innerHTML =
+      `
+      <div class="d-flex justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 pb-5">
+        <div class="card" data-toggle="modal" data-target="#modalAgregarSucursal">
+          <div class="card card-agregar bg-secondary d-flex align-items-center justify-content-center h-100 w-100">
+            <div class="portfolio-item-caption-content text-center text-white">
+              <i class="icono-agregar fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      `;
+
+      document.getElementById('lista-sucursales').innerHTML = '';
+      for(let i=0; i<sucursales.length;i++){
+        if(sucursales[i].productos){
+          cantidadProductosSucursal= sucursales[i].productos.length;
+        }else{
+          cantidadProductosSucursal=0;
+        }
+        document.getElementById('sucursales-seccion').innerHTML +=
+        `
+        <div class="d-flex justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 pb-5">
+          <div class="card">
+            <div class="card card-sucursal bg-success d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white mb-3">
+                <i class="icono-sucursal fas fa-store-alt fa-4x"></i>
+              </div>
+              <div class="row mt-5 text-center text-white">
+                <h3 class="col-12 font-weight-bold">${sucursales[i].nombreSucursal}</h3>
+                <div class="col-12 mt-3 d-flex justify-content-around font-italic">
+                  <h4>Productos: </h4>
+                  <h4>${cantidadProductosSucursal} disponibles</h4>
+                </div>
+                <h5 class="col-12 mt-3" >Click / Tap para ver más</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        `;
+
+        document.getElementById('lista-sucursales').innerHTML +=
+        `
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="${sucursales[i].codigoSucursal}">
+          <label class="custom-control-label" for="${sucursales[i].codigoSucursal}">${sucursales[i].nombreSucursal}</label>
+        </div>
+        `;
+      }
+    }else{
+      console.log("La empresa no tiene sucursales todavia");
+      document.getElementById('sucursales-seccion').innerHTML =
+      `
+      <div class="d-flex justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 pb-5">
+        <div class="card" data-toggle="modal" data-target="#modalAgregarSucursal">
+          <div class="card card-agregar bg-secondary d-flex align-items-center justify-content-center h-100 w-100">
+            <div class="portfolio-item-caption-content text-center text-white">
+              <i class="icono-agregar fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      `;
+    }
+  }).catch(error=>{
+    console.error(error);
+  });
+}
+
 
 
 function verProducto(idProductoViendo) {
@@ -314,9 +394,101 @@ function verComentariosProducto(idProductoViendo){
   });
 }
 
+const formularioAgregarProducto= document.getElementById('formularioAgregarProducto');
+
+formularioAgregarProducto.addEventListener('submit',(e) => {
+  e.preventDefault();
+  e.stopPropagation();
+
+});
+
+
+function agregarProducto(){
+
+
+}
+
+const formulario_sucursal= document.getElementById('formulario_sucursal');
+
+formulario_sucursal.addEventListener('submit',(e) => {
+  e.preventDefault();
+  e.stopPropagation();
+
+});
+
+function agregarSucursal(){
+
+  if(validar_info_sucursal()){
+    empresaSeleccionada = document.getElementById('empresa-viendo');
+    nombreEmpresaSeleccionada = empresaSeleccionada.options[empresaSeleccionada.selectedIndex].text;
+    let sucursal= {
+      codigoEmpresa: document.getElementById('empresa-viendo').value,
+      nombreEmpresa: nombreEmpresaSeleccionada,
+      nombreSucursal: document.getElementById('nombreSucursal').value,
+      longitudSucursal: document.getElementById('longitudSucursal').value,
+      latitudSucursal: document.getElementById('latitudSucursal').value,
+      direccionSucursal: document.getElementById('direccionSucursal').value
+    };
+    document.getElementById('agregar-btn-sucursal').disabled= false;
+    document.getElementById('agregar-btn-sucursal').innerHTML="Agregando...";
+    console.log('Sucursal a guardar: '+JSON.stringify(sucursal));
+
+    axios({
+      method:'POST',
+      url:  '../../pruebas_proyecto/backend/api/sucursales.php',
+      responseType:'json',
+      data: sucursal
+    }).then(res=>{
+      console.log(res.data);
+      limpiar_form_sucursal();
+        document.getElementById('agregar-btn-sucursal').disabled= false;
+        document.getElementById('agregar-btn-sucursal').innerHTML="Agregar";
+    }).catch(error=>{
+      console.error(error);
+    });
+
+    listarSucursales();
+  }
+}
 
 function verRedesSociales(){
   $(function () {
     $('[data-toggle="popover"]').popover()
   });
+}
+
+
+function validar_info_sucursal(){
+  var nombre_Sucursal =document.getElementById('nombreSucursal').value;
+  var longitud_Sucursal =document.getElementById('longitudSucursal').value;
+  var latitud_Sucursal =document.getElementById('latitudSucursal').value;
+  var direccion_Sucursal =document.getElementById('direccionSucursal').value;
+
+  // IDEA: INICIA LA VALIDACION
+
+  if(nombre_Sucursal=="" || nombre_Sucursal==null){
+    alert("EL nombre de la sucursal es obligatorio");
+    return false;
+  }
+
+  if( (longitud_Sucursal=="" && latitud_Sucursal=="") || direccion_Sucursal=="" ){
+    alert("debe elegir una de las dos opciones especificadas para detallar la ubicación");
+    return false;
+  }
+
+  if( (longitud_Sucursal=="" || latitud_Sucursal=="") || direccion_Sucursal=="" ){
+    alert("debe elegir una de las dos opciones especificadas para detallar la ubicación");
+    return false;
+  }
+
+  return true;
+  guardarSucursal();
+
+}
+
+function limpiar_form_sucursal() {
+  document.getElementById('nombreSucursal').value=null;
+  document.getElementById('longitudSucursal').value=null;
+  document.getElementById('latitudSucursal').value=null;
+  document.getElementById('direccionSucursal').value=null;
 }

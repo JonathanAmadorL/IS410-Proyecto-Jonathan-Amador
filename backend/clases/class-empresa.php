@@ -65,7 +65,7 @@
     "latitudEmpresa" => $this ->latitudEmpresa,
     "bannerEmpresa" => $this ->bannerEmpresa,
     "logoEmpresa" => $this ->logoEmpresa,
-    "redesSocialesEmpresa" => array(array("facebookEmpresa" => $this ->facebookEmpresa, "twitterEmpresa" => $this ->twitterEmpresa, "instragramEmpresa" => $this ->instagramEmpresa)),
+    "redesSocialesEmpresa" => array(array("facebookEmpresa" => $this ->facebookEmpresa, "twitterEmpresa" => $this ->twitterEmpresa, "instagramEmpresa" => $this ->instagramEmpresa)),
     "descripcionEmpresa" => $this ->descripcionEmpresa
     );
 
@@ -74,6 +74,8 @@
     $archivoEmpresas= fopen("../data/empresas.json","w");
     fwrite($archivoEmpresas,json_encode($empresas));
     fclose($archivoEmpresas);
+
+    echo(json_encode());
   }
 
   public static function obtenerEmpresas(){
@@ -98,13 +100,13 @@
       $contenidoArchivoEmpresas = file_get_contents('../data/empresas.json');
       $empresas = json_decode($contenidoArchivoEmpresas,true);
 
-      echo "La emprese contenia esta informacion: ";
+      echo "La empresa contenia esta informacion: ";
 
       for($i=0; $i<sizeof($empresas); $i++){
         if($empresas[$i]["codigoEmpresa"]== $idEmpresa){
 
           //guardo el codigo que tenia la empresa antes de actualizar dicha Informacion
-          $codigoEmpresaGuardar = $empresas[$indice]["codigoEmpresa"];
+          $codigoEmpresaGuardar = $empresas[$i]["codigoEmpresa"];
 
           $empresa = array(
 
@@ -121,7 +123,7 @@
             "descripcionEmpresa" => $this ->descripcionEmpresa
           );
 
-          $empresas[$indice]= $empresa;
+          $empresas[$i]= $empresa;
 
           // IDEA: AQUI SOBREEESCRIBIMOS EL ARCHIVO PARA ACTUALIZAR LA EMPRESA
 

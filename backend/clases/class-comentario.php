@@ -152,7 +152,7 @@
       for($i=0; $i<sizeof($comentarios); $i++){
         if($comentarios[$i]["codigoComentario"]== $idComentario){
           echo json_encode($comentarios[$i]);
-          //guardo el codigo que tenia el producto antes de actualizar dicha Informacion
+          //guardo el codigo que tenia el comentario antes de actualizar dicha Informacion
           $codigoComentarioGuardar = $comentarios[$i]["codigoComentario"];
 
           $comentario= array(
