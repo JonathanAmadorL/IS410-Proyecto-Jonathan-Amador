@@ -1,7 +1,7 @@
 <?php
 header("Content-Type: application/json");
 include_once("../clases/class-comentario.php");
-sleep(2);
+sleep(1);
 
 switch ($_SERVER['REQUEST_METHOD']){
   case 'POST': //GUARDAR

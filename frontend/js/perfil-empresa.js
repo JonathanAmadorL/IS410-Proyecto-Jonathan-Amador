@@ -147,8 +147,8 @@ function listarSucursales(){
 
       document.getElementById('lista-sucursales').innerHTML = '';
       for(let i=0; i<sucursales.length;i++){
-        if(sucursales[i].productos){
-          cantidadProductosSucursal= sucursales[i].productos.length;
+        if(sucursales[i].productosSucursal){
+          cantidadProductosSucursal= sucursales[i].productosSucursal.length;
         }else{
           cantidadProductosSucursal=0;
         }
@@ -176,7 +176,7 @@ function listarSucursales(){
         document.getElementById('lista-sucursales').innerHTML +=
         `
         <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="${sucursales[i].codigoSucursal}">
+          <input type="checkbox"  class="custom-control-input" name="checkboxSucursal" id="${sucursales[i].codigoSucursal}" value="${sucursales[i].codigoSucursal}">
           <label class="custom-control-label" for="${sucursales[i].codigoSucursal}">${sucursales[i].nombreSucursal}</label>
         </div>
         `;
@@ -404,6 +404,73 @@ formularioAgregarProducto.addEventListener('submit',(e) => {
 
 
 function agregarProducto(){
+
+
+}
+
+function validar_info_producto(){
+  var agregar_NombreProducto =document.getElementById('agregarNombreProducto').value;
+  var agregar_PrecioProducto =document.getElementById('agregarPrecioProducto').value;
+  var agregar_PctDescProducto =document.getElementById('agregarPctDescProducto').value;
+  var agregar_DescripcionProducto =document.getElementById('agregarDescripcionProducto').value;
+  var agregar_ImagenProducto =document.getElementById('agregarImagenProducto').value;
+  var agregar_CantidadProducto =document.getElementById('agregarCantidadProducto').value;
+
+  if(agregar_NombreProducto=="" || agregar_NombreProducto==null){
+    alert("EL nombre del producto es obligatorio");
+    return false;
+  }
+
+  if(agregar_PrecioProducto=="" || agregar_PrecioProducto==null){
+    alert("EL precio del producto es obligatorio");
+    return false;
+  }
+
+  if(agregar_DescripcionProducto=="" || agregar_DescripcionProducto==null){
+    alert("La descripcion del productol es obligatorio");
+    return false;
+  }
+
+  if(agregar_ImagenProducto=="" || agregar_ImagenProducto==null){
+    alert("La imagen del producto es obligatorio");
+    return false;
+  }
+  if(agregar_CantidadProducto=="" || agregar_CantidadProducto==null){
+    alert("La cantidad del producto es obligatorio");
+    return false;
+  }
+
+  var array=[];
+  $(":checkbox[name=checkboxSucursal]").each(function() {
+    if(this.checked){
+      array.push($(this).val());
+    }
+  });
+  $(document).click(function() {
+    checkboxes = $(".checkboxSucursal:checked").length;
+    array.push(checkboxes);
+    console.log("Se seleccionaron "+checkboxes+" sucursales");
+  });
+
+for(let i=0; i<array.length ; i++){
+  console.log(array[i]);
+}
+
+  for(let i=0; i<array.length; i++){
+    axios({
+      method: 'get',
+      url: '../backend/api/sucursales.php?id='+array[i],
+      responseType: 'json'
+    }).then(res=>{
+      console.log(res.data);
+    }).catch(error=>{
+      console.error(error);
+    });
+  }
+
+
+
+
 
 
 }

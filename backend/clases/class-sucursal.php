@@ -7,7 +7,6 @@
     private $longitudSucursal;
     private $latitudSucursal;
     private $direccionSucursal;
-    private $productosEnSucursal= array();
 
   public function __construct(
     $codigoEmpresa,
@@ -15,8 +14,8 @@
     $nombreSucursal,
     $longitudSucursal,
     $latitudSucursal,
-    $direccionSucursal,
-    $productosEnSucursal
+    $direccionSucursal
+
   ){
     $this -> codigoEmpresa   = $codigoEmpresa;
     $this -> nombreEmpresa   = $nombreEmpresa;
@@ -24,7 +23,7 @@
     $this -> longitudSucursal   = $longitudSucursal;
     $this -> latitudSucursal   = $latitudSucursal;
     $this -> direccionSucursal   = $direccionSucursal;
-    $this -> productosEnSucursal = $productosEnSucursal;
+
   }
 
   public function guardarSucursal(){
@@ -53,8 +52,7 @@
       "nombreSucursal" => $this ->nombreSucursal,
       "longitudSucursal" => $this ->longitudSucursal,
       "latitudSucursal" => $this ->latitudSucursal,
-      "direccionSucursal" => $this ->direccionSucursal,
-      "productos" => $this ->productosEnSucursal
+      "direccionSucursal" => $this ->direccionSucursal
     );
 
     // IDEA: AQUI SOBREEESCRIBIMOS EL ARCHIVO PARA GUARDAR LA SUCURSAL
@@ -80,6 +78,7 @@
         "longitudSucursal" => $this ->longitudSucursal,
         "latitudSucursal" => $this ->latitudSucursal,
         "direccionSucursal" => $this ->direccionSucursal
+
       );
 
       //echo (json_encode($empresas[$i]));
@@ -123,18 +122,15 @@
       if($sucursales[$i]["codigoSucursal"]== $idSucursal){
         //guardo el codigo que tenia la sucursal antes de actualizar dicha Informacion
         $codigoSucursalGuardar = $sucursales[$i]["codigoSucursal"];
-        $sucursal =array(
 
-          "codigoSucursal" => $codigoSucursal,
-          "codigoEmpresa" => $this ->codigoEmpresa,
-          "nombreEmpresa" => $this ->nombreEmpresa,
-          "nombreSucursal" => $this ->nombreSucursal,
-          "longitudSucursal" => $this ->longitudSucursal,
-          "latitudSucursal" => $this ->latitudSucursal,
-          "direccionSucursal" => $this ->direccionSucursal
-        );
+        $sucursales[$i]["codigoSucursal"] = $codigoSucursalGuardar;
+        $sucursales[$i]["codigoEmpresa"] = $this ->codigoEmpresa;
+        $sucursales[$i]["nombreEmpresa"] = $this ->nombreEmpresa;
+        $sucursales[$i]["nombreSucursal"] = $this ->nombreSucursal;
+        $sucursales[$i]["longitudSucursal"] = $this ->longitudSucursal;
+        $sucursales[$i]["latitudSucursal"] = $this ->latitudSucursal;
+        $sucursales[$i]["direccionSucursal"] = $this ->direccionSucursal;
 
-        $sucursales[$i]= $sucursal;
 
         // IDEA: AQUI SOBREEESCRIBIMOS EL ARCHIVO PARA actualizar la sucursal
         $archivoSucursales= fopen("../data/sucursales.json","w");
@@ -158,15 +154,13 @@
 
           if($sucursalesArrayEmpresa[$j]["codigoSucursal"]==$codigoSucursalGuardar){
 
-            $empresas[$i]["sucursales"][$j]= array(
-              "codigoSucursal" => $codigoSucursal,
-              "codigoEmpresa" => $this ->codigoEmpresa,
-              "nombreEmpresa" => $this ->nombreEmpresa,
-              "nombreSucursal" => $this ->nombreSucursal,
-              "longitudSucursal" => $this ->longitudSucursal,
-              "latitudSucursal" => $this ->latitudSucursal,
-              "direccionSucursal" => $this ->direccionSucursal
-            );
+            $empresas[$i]["sucursales"][$j]["codigoSucursal"] = $codigoSucursalGuardar;
+            $empresas[$i]["sucursales"][$j]["codigoEmpresa"] = $this ->codigoEmpresa;
+            $empresas[$i]["sucursales"][$j]["nombreEmpresa"] = $this ->nombreEmpresa;
+            $empresas[$i]["sucursales"][$j]["nombreSucursal"] = $this ->nombreSucursal;
+            $empresas[$i]["sucursales"][$j]["longitudSucursal"] = $this ->longitudSucursal;
+            $empresas[$i]["sucursales"][$j]["latitudSucursal"] = $this ->latitudSucursal;
+            $empresas[$i]["sucursales"][$j]["direccionSucursal"] = $this ->direccionSucursal;
 
 
             echo "se actualizo la informacion de la sucursal de la empresa <br>";
@@ -179,6 +173,7 @@
 
       }
     }
+
 
   }
 
@@ -233,6 +228,151 @@
     fclose($archivoSucursales);
   }
 
+
+
+    /**
+     * Get the value of Codigo Empresa
+     *
+     * @return mixed
+     */
+    public function getCodigoEmpresa()
+    {
+        return $this->codigoEmpresa;
+    }
+
+    /**
+     * Set the value of Codigo Empresa
+     *
+     * @param mixed $codigoEmpresa
+     *
+     * @return self
+     */
+    public function setCodigoEmpresa($codigoEmpresa)
+    {
+        $this->codigoEmpresa = $codigoEmpresa;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Nombre Empresa
+     *
+     * @return mixed
+     */
+    public function getNombreEmpresa()
+    {
+        return $this->nombreEmpresa;
+    }
+
+    /**
+     * Set the value of Nombre Empresa
+     *
+     * @param mixed $nombreEmpresa
+     *
+     * @return self
+     */
+    public function setNombreEmpresa($nombreEmpresa)
+    {
+        $this->nombreEmpresa = $nombreEmpresa;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Nombre Sucursal
+     *
+     * @return mixed
+     */
+    public function getNombreSucursal()
+    {
+        return $this->nombreSucursal;
+    }
+
+    /**
+     * Set the value of Nombre Sucursal
+     *
+     * @param mixed $nombreSucursal
+     *
+     * @return self
+     */
+    public function setNombreSucursal($nombreSucursal)
+    {
+        $this->nombreSucursal = $nombreSucursal;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Longitud Sucursal
+     *
+     * @return mixed
+     */
+    public function getLongitudSucursal()
+    {
+        return $this->longitudSucursal;
+    }
+
+    /**
+     * Set the value of Longitud Sucursal
+     *
+     * @param mixed $longitudSucursal
+     *
+     * @return self
+     */
+    public function setLongitudSucursal($longitudSucursal)
+    {
+        $this->longitudSucursal = $longitudSucursal;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Latitud Sucursal
+     *
+     * @return mixed
+     */
+    public function getLatitudSucursal()
+    {
+        return $this->latitudSucursal;
+    }
+
+    /**
+     * Set the value of Latitud Sucursal
+     *
+     * @param mixed $latitudSucursal
+     *
+     * @return self
+     */
+    public function setLatitudSucursal($latitudSucursal)
+    {
+        $this->latitudSucursal = $latitudSucursal;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Direccion Sucursal
+     *
+     * @return mixed
+     */
+    public function getDireccionSucursal()
+    {
+        return $this->direccionSucursal;
+    }
+
+    /**
+     * Set the value of Direccion Sucursal
+     *
+     * @param mixed $direccionSucursal
+     *
+     * @return self
+     */
+    public function setDireccionSucursal($direccionSucursal)
+    {
+        $this->direccionSucursal = $direccionSucursal;
+
+        return $this;
+    }
 
 }
 

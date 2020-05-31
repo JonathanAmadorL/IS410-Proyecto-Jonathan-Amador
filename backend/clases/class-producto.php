@@ -121,20 +121,17 @@
       if($productos[$i]["codigoProducto"]== $idProducto){
         //guardo el codigo que tenia el producto antes de actualizar dicha Informacion
         $codigoProductoGuardar = $productos[$i]["codigoProducto"];
-        $producto =array(
 
-          "codigoProducto" => $codigoProductoGuardar,
-          "codigoEmpresa" => $this ->codigoEmpresa,
-          "nombreEmpresa" => $this ->nombreEmpresa,
-          "nombreProducto" => $this ->nombreProducto,
-          "precioProducto" => $this ->precioProducto,
-          "descuentoProducto" => $this ->descuentoProducto,
-          "descripcionProducto" => $this ->descripcionProducto,
-          "imagenProducto" => $this ->imagenProducto,
-          "cantidadProducto" => $this ->cantidadProducto
-        );
 
-        $productos[$i]= $producto;
+        $productos[$i]["codigoProducto"] = $codigoProductoGuardar;
+        $productos[$i]["codigoEmpresa"] = $this ->codigoEmpresa;
+        $productos[$i]["nombreEmpresa"] = $this ->nombreEmpresa;
+        $productos[$i]["nombreProducto"] = $this ->nombreProducto;
+        $productos[$i]["precioProducto"] = $this ->precioProducto;
+        $productos[$i]["descuentoProducto"] = $this ->descuentoProducto;
+        $productos[$i]["descripcionProducto"] = $this ->descripcionProducto;
+        $productos[$i]["imagenProducto"] = $this ->imagenProducto;
+        $productos[$i]["cantidadProducto"] = $this ->cantidadProducto;
 
         // IDEA: AQUI SOBREEESCRIBIMOS EL ARCHIVO PARA actualizar el producto
         $archivoProductos= fopen("../data/productos.json","w");
@@ -158,15 +155,13 @@
 
             if($productosArrayEmpresa[$j]["codigoProducto"]==$codigoProductoGuardar){
 
-              $empresas[$i]["productos"][$j]= array(
-                "codigoProducto" => $codigoProductoGuardar,
-                "nombreProducto" => $this ->nombreProducto,
-                "precioProducto" => $this ->precioProducto,
-                "descuentoProducto" => $this ->descuentoProducto,
-                "descripcionProducto" => $this ->descripcionProducto,
-                "imagenProducto" => $this ->imagenProducto,
-                "cantidadProducto" => $this ->cantidadProducto
-              );
+              $empresas[$i]["productos"][$j]["codigoProducto"] = $codigoProductoGuardar;
+              $empresas[$i]["productos"][$j]["nombreProducto"] = $this ->nombreProducto;
+              $empresas[$i]["productos"][$j]["precioProducto"] = $this ->precioProducto;
+              $empresas[$i]["productos"][$j]["descuentoProducto"] = $this ->descuentoProducto;
+              $empresas[$i]["productos"][$j]["descripcionProducto"] = $this ->descripcionProducto;
+              $empresas[$i]["productos"][$j]["imagenProducto"] = $this ->imagenProducto;
+              $empresas[$i]["productos"][$j]["cantidadProducto"] = $this ->cantidadProducto;
 
 
               echo "se actualizo la informacion del producto de la empresa <br>";

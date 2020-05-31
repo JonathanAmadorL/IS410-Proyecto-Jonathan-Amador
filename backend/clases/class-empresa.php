@@ -108,7 +108,22 @@
           //guardo el codigo que tenia la empresa antes de actualizar dicha Informacion
           $codigoEmpresaGuardar = $empresas[$i]["codigoEmpresa"];
 
-          $empresa = array(
+          $empresas[$i]["codigoEmpresa"] = $codigoEmpresaGuardar;
+          $empresas[$i]["nombreEmpresa"] = $this ->nombreEmpresa;
+          $empresas[$i]["emailEmpresa"] = $this ->emailEmpresa;
+          $empresas[$i]["passwordEmpresa"] = $this ->passwordEmpresa;
+          $empresas[$i]["paisEmpresa"] = $this ->paisEmpresa;
+          $empresas[$i]["longitudEmpresa"] = $this ->longitudEmpresa;
+          $empresas[$i]["latitudEmpresa"] = $this ->latitudEmpresa;
+          $empresas[$i]["bannerEmpresa"] = $this ->bannerEmpresa;
+          $empresas[$i]["logoEmpresa"] = $this ->logoEmpresa;
+          $empresas[$i]["redesSocialesEmpresa"] = array(array("facebookEmpresa" => $this ->facebookEmpresa, "twitterEmpresa" => $this ->twitterEmpresa, "instragramEmpresa" => $this ->instagramEmpresa));
+          $empresas[$i]["descripcionEmpresa"] = $this ->descripcionEmpresa;
+
+
+
+
+          /*$empresa = array(
 
             "codigoEmpresa" => $codigoEmpresaGuardar,
             "nombreEmpresa" => $this ->nombreEmpresa,
@@ -123,7 +138,7 @@
             "descripcionEmpresa" => $this ->descripcionEmpresa
           );
 
-          $empresas[$i]= $empresa;
+          $empresas[$i]= $empresa;*/
 
           // IDEA: AQUI SOBREEESCRIBIMOS EL ARCHIVO PARA ACTUALIZAR LA EMPRESA
 
