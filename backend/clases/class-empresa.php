@@ -49,6 +49,15 @@
 
   public function guardarEmpresa(){
 
+    if(file_exists('../data/empresas.json')){
+      //echo('Si existe el archivo empresas.json');
+    }else{
+      fopen("../data/empresas.json","w");
+      fclose("../data/empresas.json");
+      //echo "No existia el archivo, por lo tanto ya se creo";
+    }
+
+
     // IDEA: LEEMOS EL ARCHIVO PARA PODER AGREGAR UNA NUEVA EMPRESA
     $contenidoArchivoEmpresas = file_get_contents('../data/empresas.json');
     $empresas= json_decode($contenidoArchivoEmpresas,true);
@@ -75,7 +84,7 @@
     fwrite($archivoEmpresas,json_encode($empresas));
     fclose($archivoEmpresas);
 
-    echo(json_encode());
+
   }
 
   public static function obtenerEmpresas(){
@@ -117,7 +126,7 @@
           $empresas[$i]["latitudEmpresa"] = $this ->latitudEmpresa;
           $empresas[$i]["bannerEmpresa"] = $this ->bannerEmpresa;
           $empresas[$i]["logoEmpresa"] = $this ->logoEmpresa;
-          $empresas[$i]["redesSocialesEmpresa"] = array(array("facebookEmpresa" => $this ->facebookEmpresa, "twitterEmpresa" => $this ->twitterEmpresa, "instragramEmpresa" => $this ->instagramEmpresa));
+          $empresas[$i]["redesSocialesEmpresa"] = array(array("facebookEmpresa" => $this ->facebookEmpresa, "twitterEmpresa" => $this ->twitterEmpresa, "instagramEmpresa" => $this ->instagramEmpresa));
           $empresas[$i]["descripcionEmpresa"] = $this ->descripcionEmpresa;
 
 
