@@ -1,0 +1,7 @@
+#btn-editarPerfil{
+  cursor: pointer ;
+  border: none;
+  border-radius: 10%;
+  background: #b3762b;
+  color: rgba(255, 255, 255, 0.75);
+}

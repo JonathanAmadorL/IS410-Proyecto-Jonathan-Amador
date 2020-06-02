@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+
+    <title>Vista Cliente</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/vistaCliente.css">
+
+  </head>
+
+  <body style="background: #151e29">
+    <nav class="navbar navbar-expand-lg navbar-dark  fixed-top" id="sideNav" style="background: #b3762b">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+          <span class="d-block d-lg-none">Nombre Apellido</span>
+          <span class="d-none d-lg-block">
+            <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="https://mdbootstrap.com/img/Photos/Avatars/img (8).jpg" alt="" />
+          </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Información</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#carrito" onclick="mostrarCarrito()">Carrito</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#compras" onclick="mostrarCompras()">Compras</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#favoritos" onclick="mostrarFavoritos()">Favoritos</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#comentarios" onclick="mostrarComentarios()">Comentarios</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#productos">Buscar Productos</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#cerrarSesion">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Page Content-->
+    <div class="container-fluid p-0">
+        <!-- About-->
+        <section class="resume-section" id="about">
+            <div class="resume-section-content" id="infoCliente">
+
+              <!-- IDEA: Se genera la info del cliente  -->
+
+            </div>
+        </section>
+
+        <hr class="m-0" />
+
+        <section class="resume-section" id="carrito">
+            <div class="resume-section-content" id="seccionCarrito">
+              <!-- IDEA: SE GENERA EL CARRITO DINAMICAAMENTE -->
+
+            </div>
+        </section>
+        <hr class="m-0" />
+
+
+        <section class="resume-section" id="compras">
+            <div class="resume-section-content" id="seccionCompras">
+                    <!-- IDEA: SE GENERA LAS COMPRAS DINAMICAAMENTE -->
+            </div>
+        </section>
+        <hr class="m-0" />
+
+
+
+        <section class="resume-section" id="favoritos">
+            <div class="resume-section-content" id="seccionFavoritos">
+                <h2 class="mb-5">Favoritos</h2>
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                  <div class="flex-grow-1">
+                        <h3 class="mb-0">Empresa/Producto Nombre</h3>
+                        <div class="subheading mb-3">Tipo Producto/Empresa</div>
+                        <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+                    </div>
+                    <div class="flex-shrink-0"><span class="text-primary">Ver Producto/Empresa</span></div>
+                </div>
+
+            </div>
+        </section>
+        <hr class="m-0" />
+
+        <section class="resume-section" id="comentarios">
+            <div class="resume-section-content" id="seccionComentarios">
+                <h2 class="mb-5">Comentarios</h2>
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                  <div class="flex-grow-1">
+                        <h3 class="mb-0">Producto</h3>
+                        <div class="subheading mb-3">likes y dislikes</div>
+                        <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+                    </div>
+                    <div class="flex-shrink-0"><span class="text-primary">Ver Producto</span></div>
+                </div>
+
+            </div>
+        </section>
+        <hr class="m-0" />
+
+        <section class="resume-section" id="cerrarSesion">
+          <select  id="cliente-viendo" class="custom-select" style:"width: 200px;" onchange="infoCliente()">
+
+          </select>
+        </section>
+        <hr class="m-0" />
+
+    </div>
+
+      <script src="js/jquery-3.4.1.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script src="js/perfil-cliente.js"></script>
+      <script src="js/cards.js"></script>
+
+  </body>
+</html>

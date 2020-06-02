@@ -1,4 +1,4 @@
-<<?php
+<?php
 
 class Cliente{
 
@@ -84,8 +84,8 @@ class Cliente{
 
 
   public static function obtenerClientes(){
-    $contenidoArchivoClientes=file_get_contents("../data/clientes.json");
-    echo ($contenidoArchivoClientes);
+    $contenidoArchivoClientes = file_get_contents("../data/clientes.json");
+    echo $contenidoArchivoClientes;
   }
 
   public static function obtenerCliente($idCliente){
@@ -155,6 +155,18 @@ class Cliente{
         }
     }
 
+    }
+
+    public static function verificarCliente($emailCliente, $passwordCliente){
+      $contenidoArchivoClientes= file_get_contents('../data/clientes.json');
+      $clientes=json_decode($contenidoArchivoClientes,true);
+
+      for($i=0; $i<sizeof($clientes); $i++){
+        if($clientes[$i]["emailCliente"]== $emailCliente && $clientes[$i]["passwordCliente"]== $passwordCliente){
+          return $clientes[$i];
+        }
+      }
+      return null;
     }
 
 

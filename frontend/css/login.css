@@ -1,0 +1,45 @@
+.seccion-form{
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+.modal-content{
+  background-color: #2c2f38 !important;
+  opacity: .95 !important;
+  padding: 0 20px !important;
+  box-shadow: 0px 0px 3px #848484 !important;
+}
+
+#avatar{
+  margin-top: -50px !important;
+  margin-bottom: 35px !important;
+}
+
+#avatar img{
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.form-group input{
+  height: 42px !important;
+  font-size: 18px !important;
+}
+
+button{
+  width: 60% !important;
+  margin: 5px 0 25px!important;
+}
+
+#sin-cuenta{
+  padding: 5px 0!important;
+}
+
+#sin-cuenta a{
+  color: grey!important;
+}
+
+#cerrarModalLogin{
+  display: flex !important;
+  justify-content: flex-end !important;
+  cursor: pointer !important;
+}

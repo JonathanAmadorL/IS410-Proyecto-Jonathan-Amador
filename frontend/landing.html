@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width , initial-scale=1.0">
     <title>Landing</title>
 
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/landing.css">
     <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/login.css">
+
 
     <script src="js/jquery-3.4.1.min.js"></script>
   </head>
@@ -21,7 +24,7 @@
           <li><a href="">Inicio</a></li>
           <li><a href="productos.html">Productos</a></li>
           <li><a href="registro.html">Registrarse</a></li>
-          <li><a href="">Login</a></li>
+          <li><a  href="#modalLogin" data-toggle="modal">Login</a></li>
           <li><a href="super.html">SuperUser</a></li>
         </ul>
 
@@ -77,7 +80,44 @@
       </main>
 
 
+      <!-- IDEA: HAER EL MODAL CON BOOTSTRAP PARA EL LOGIN -->
+          <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered text-center">
 
+                    <div class="modal-content col-sm-8 seccion-form">
+                      <div class="col-12" id="avatar">
+                        <img src="img/raton-avatar2.png" >
+                      </div>
+                      <form class="col-12" action="index.html" method="post">
+                        <div class="form-group" id="usuario-group">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="email" placeholder="Email" class="form-control" id="emailInput">
+                          </div>
+                        </div>
+                        <div class="form-group" id="contraseña-group">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            </div>
+                            <input type="password" placeholder="Contraseña" class="form-control" id="passwordInput">
+                          </div>
+                        </div>
+                        <button type="button" class="btn btn-success" onclick="login()"><i class="fas fa-sign-in-alt"></i>  Ingresar</button>
+                        <div class="col-12" id="sin-cuenta">
+                          <a href="registrarse.html">¿No tienes una cuenta?</a>
+                        </div>
+                      </form>
+                    </div>
+              </div>
+          </div>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
       <script src="js/landing.js"></script>
+      <script src="js/controlador-login.js"></script>
+      <script src="js/bootstrap.min.js"></script>
   </body>
 </html>

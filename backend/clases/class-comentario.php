@@ -73,6 +73,32 @@
         }
       }
 
+      // IDEA: SE LO GUARDAMOS AL CLIENTE
+
+      $contenidoArchivoClientes= file_get_contents('../data/clientes.json');
+      $clientes=json_decode($contenidoArchivoClientes,true);
+
+      for($i=0; $i<sizeof($clientes);$i++){
+        if($clientes[$i]["codigoCliente"]== $this->codigoCliente){
+          echo "Se encontro el cliente";
+          echo (json_encode($clientes[$i]));
+
+          $clientes[$i]["comentarios"][]=array(
+            "codigoComentario" => $codigoComentario,
+            "codigoProducto" => $this ->codigoProducto,
+            "contenido" => $this ->contenido,
+          );
+
+          echo "se agrego el comentario <br>";
+          echo (json_encode($clientes[$i]));
+
+          $archivoClientes= fopen('../data/clientes.json','w');
+          fwrite($archivoClientes,json_encode($clientes));
+          fclose($archivoClientes);
+
+        }
+      }
+
 
       // IDEA: Ocupamos guardarlo en el json de empresas tambien.... no se si es lo ideal
       $contenidoArchivoEmpresas = file_get_contents('../data/empresas.json');
@@ -212,6 +238,43 @@
       }
 
 
+      //AHORA TOCA ACTUALIZAR LOS COMENTARIOS DENTRO DE CLIENTES
+
+      $contenidoArchivoClientes= file_get_contents('../data/clientes.json');
+      $clientes=json_decode($contenidoArchivoClientes,true);
+
+      for ($i=0; $i <sizeof($clientes) ; $i++) {
+        if($clientes[$i]["codigoCliente"]== $this ->codigoCliente){
+            echo "se encontro el cliente con la que sera su vieja informacion";
+            echo (json_encode($clientes[$i]));
+
+            if(array_key_exists("comentarios", $clientes[$i])){
+
+            $comentariosArrayCliente = $clientes[$i]["comentarios"];
+
+            for ($j=0; $j <sizeof($comentariosArrayCliente) ; $j++) {
+              if($comentariosArrayCliente[$j]["codigoComentario"]== $codigoComentarioGuardar){
+
+                $clientes[$i]["comentarios"][$j] = array(
+                  "codigoComentario" => $codigoComentarioGuardar,
+                  "codigoProducto" => $this ->codigoProducto,
+                  "contenido" => $this ->contenido,
+                );
+
+                echo "se actualizo la informacion del comentario del producto <br>";
+
+                $archivoClientes= fopen('../data/clientes.json','w');
+                fwrite($archivoClientes,json_encode($clientes));
+                fclose($archivoClientes);
+
+              }
+            }
+          }
+        }
+      }
+
+
+
       //AHORA toca actualizar los comentarios dentro del los productos en empresas.json
       $contenidoArchivoEmpresas = file_get_contents('../data/empresas.json');
       $empresas = json_decode($contenidoArchivoEmpresas,true);
@@ -293,11 +356,35 @@
               }
             }
           }
-
-
-
         }
       }
+
+      // IDEA: BORRAR EL COMENTARIO EN EL CLIENTE
+      $contenidoArchivoClientes= file_get_contents('../data/clientes.json');
+      $clientes=json_decode($contenidoArchivoClientes,true);
+
+      for($i=0; $i<sizeof($clientes);$i++){
+
+          if(array_key_exists("comentarios", $clientes[$i])){
+
+            $comentariosArrayCliente = $clientes[$i]["comentarios"];
+
+            for ($j=0; $j < sizeof($comentariosArrayCliente) ; $j++) {
+
+              if($comentariosArrayCliente[$j]["codigoComentario"]==$comentarioEliminarse["codigoComentario"]){
+
+                array_splice($clientes[$i]["comentarios"], $j ,1);
+
+                echo "se borro el comentario del cliente <br>";
+
+                $archivoClientes= fopen("../data/clientes.json","w");
+                fwrite($archivoClientes,json_encode($clientes));
+                fclose($archivoClientes);
+              }
+            }
+          }
+      }
+
 
 
         // IDEA: BORRAR EL COMENTARIO DEL PRODUCTO PERO GUARDADO EN LA EMPRESA

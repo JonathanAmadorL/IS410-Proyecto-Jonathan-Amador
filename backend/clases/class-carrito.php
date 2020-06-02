@@ -67,15 +67,30 @@ class Carrito{
     $contenidoArchivoClientes = file_get_contents('../data/clientes.json');
     $clientes= json_decode($contenidoArchivoClientes,true);
 
+    $compras = null;
+
     for($i=0; $i<sizeof($clientes); $i++){
       if($clientes[$i]["codigoCliente"]== $idCliente){
+
+        // IDEA: guardamos el arrgelo del carrito antes de borrarlo
+        $compras = $clientes[$i]["productos"]["carrito"];
+
+        // IDEA: se limpia el carrito
          array_splice($clientes[$i]["productos"]["carrito"], 0);
 
-         $archivoClientes= fopen("../data/clientes.json","w");
-         fwrite($archivoClientes,json_encode($clientes));
-         fclose($archivoClientes);
+
+         // IDEA: se recorrer lo que se guarda en compras y se itera para guardar en nuestro attributo compras
+         for($j=0; $j<sizeof($compras); $j++){
+           $clientes[$i]["productos"]["compras"][] = $compras[$j];
+         }
+
       }
+      $archivoClientes= fopen("../data/clientes.json","w");
+      fwrite($archivoClientes,json_encode($clientes));
+      fclose($archivoClientes);
     }
+
+
 
     // IDEA: FALTA ANTES DE BORRAR PASARLO AL ARRAY DE COMPRASs
 

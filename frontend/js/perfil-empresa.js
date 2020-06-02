@@ -45,9 +45,9 @@ function portafolioEmpresa(){
               <!-- IDEA: Seccion para saber que es, sie s empresa o cliente -->
           <p class="portafolio-tipo font-weight-light mb-0">Empresa</p>
           <div class="col-lg-4 mb-5 mt-4 mb-lg-0">
-            <a class="btn btn-outline-light btn-social mx-1" href="#" data-toggle="popover" data-placement="bottom" title="Facebook" data-content="${perfil.redesSocialesEmpresa[0].facebookEmpresa}" onclick="verRedesSociales()" ><i class="fab fa-fw fa-facebook-f" style="color: #1877f2;"></i></a>
-            <a class="btn btn-outline-light btn-social mx-1" href="#" data-toggle="popover" data-placement="bottom" title="Twitter" data-content="${perfil.redesSocialesEmpresa[0].twitterEmpresa}" onclick="verRedesSociales()"><i class="fab fa-fw fa-twitter" style="color:  rgba(27, 149, 224, 1);;"></i></a>
-            <a class="btn btn-outline-light btn-social mx-1" href="#" data-toggle="popover" data-placement="bottom" title="Instagram" data-content="${perfil.redesSocialesEmpresa[0].instagramEmpresa}" onclick="verRedesSociales()"><i class="fab fa-fw fa-instagram" style="color: #f56040;"></i></a>
+            <a class="btn btn-outline-light btn-social mx-1"  data-toggle="popover" data-placement="bottom" title="Facebook" data-content="${perfil.redesSocialesEmpresa[0].facebookEmpresa}" onclick="verRedesSociales()" ><i class="fab fa-fw fa-facebook-f" style="color: #1877f2;"></i></a>
+            <a class="btn btn-outline-light btn-social mx-1"  data-toggle="popover" data-placement="bottom" title="Twitter" data-content="${perfil.redesSocialesEmpresa[0].twitterEmpresa}" onclick="verRedesSociales()"><i class="fab fa-fw fa-twitter" style="color:  rgba(27, 149, 224, 1);;"></i></a>
+            <a class="btn btn-outline-light btn-social mx-1"  data-toggle="popover" data-placement="bottom" title="Instagram" data-content="${perfil.redesSocialesEmpresa[0].instagramEmpresa}" onclick="verRedesSociales()"><i class="fab fa-fw fa-instagram" style="color: #f56040;"></i></a>
           </div>
         </div>
 

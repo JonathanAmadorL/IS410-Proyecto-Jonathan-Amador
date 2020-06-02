@@ -29,12 +29,10 @@ switch ($_SERVER['REQUEST_METHOD']){
   case 'GET':
   if(isset($_GET['id'])){
     Cliente::obtenerCliente($_GET['id']);
-    //$resultado["mensaje"]= "Retornar el empresa con el id: ".$_GET['id']; //TENDRIAMOS QUE ENVAIR EL ID POR URL
-    //echo json_encode($resultado);
+
   }else{
-    Cliente::obtenerClientes();
-    //$resultado["mensaje"]= "Retornar todos los empresas";
-    //echo json_encode($resultado);
+    Cliente:: obtenerClientes();
+
   }
   break;
 
@@ -74,4 +72,4 @@ switch ($_SERVER['REQUEST_METHOD']){
 
 }
 
- ?>
+?>
