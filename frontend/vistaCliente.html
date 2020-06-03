@@ -102,9 +102,172 @@
 
           </select>
         </section>
+        <a href="../backend/api/logOut.php"> Cerrar Sesión </a>
+        <a href="productos.html"> Navegar </a>
+
         <hr class="m-0" />
 
+
     </div>
+
+
+    <!-- IDEA: AQUI VA LA SECCION PARA EL MODAL DE Ver/editar PRODUCTO -->
+    <div class="modal-background-editar">
+      <!-- IDEA: CARD PARA EL MODAL PARA COMPRAR -->
+          <div class="producto-card" id="produtoCard">
+
+          </div>
+    </div>
+
+    <!-- IDEA: LA Seccion de comentarios -->
+    <div class="modal-background-comentarios">
+
+
+      <div class="modal-comentarios container my-5 py-5 px-5">
+        <section class="text-dark mb-5" id="comentariosSeccion">
+
+          <!-- IDEA: LOS Comentarios DE CADA PRODUCTO SE GENERAN DINAMICAMENTE -->
+        </section>
+      </div>
+
+    </div>
+
+
+    <!-- IDEA: AQUI EMPIEZA EL MODAL PARA Agregar PRODUCTOS añ carrito-->
+
+              <div class="modal fade" id="modalFormularioCarrito" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalCenterTitle">Agregar al carrito</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body" id="formularioAgregarCarrito">
+                      <label for="cantidadProducto" class="my-2">Cantidad Producto:</label>
+                      <input class="form-control" type="number" id="cantidadProducto">
+
+                      </div>
+                      <div class="modal-footer" id="botonesAgregarCarrito">
+                        <!-- IDEA: SE agregan os botones dinamicamente por conveniencia -->
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="modal fade" id="modalInfoClienteEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Editar tus datos</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body" id="formularioEditarInfoCliente">
+
+                        <form>
+                          <div class="row">
+                            <div class="col-6">
+                              <label for="editarNombreCliente">Nombre: </label>
+                              <input class="form-control" type="text" id="editarNombreCliente" value="${productos[i].nombreProducto}">
+                            </div>
+                            <div class="col-6">
+                              <label for="editarApellidoCliente">Apellido: </label>
+                              <input class="form-control" type="text" id="editarApellidoCliente" value="${productos[i].nombreProducto}">
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-12">
+                              <label for="editarEmailCliente" class="my-2">Email:</label>
+                              <input class="form-control" type="email" id="editarEmailCliente" value="${productos[i].precioProducto}">
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-6">
+                              <label for="editarPasswordCliente" class="my-2">Contraseña:</label>
+                              <input class="form-control" type="password" id="editarPasswordCliente" value="${productos[i].precioProducto}">
+
+                            </div>
+                            <div class="col-6">
+                              <label for="editarRePasswordCliente" class="my-2">Repetir Contraseña:</label>
+                              <input class="form-control" type="password" id="editarRePasswordCliente" value="${productos[i].precioProducto}">
+                            </div>
+                          </div>
+
+
+                          <div class="row">
+                            <div class="col-6">
+
+                              <label for="editarPaisCliente" class="my-2">Pais; </label>
+                              <select class="form-control" name="" id="editarPaisCliente">
+                                <option value=""></option>
+                                <option value="Honduras">Honduras</option>
+                                <option value="Costa Rica">Costa Rica</option>
+                                <option value="El Salvador">El Salvador</option>
+                                <option value="Guatemala">Guatemala</option>
+                                <option value="Panama">Panama</option>
+                              </select>
+
+                            </div>
+                            <div class="col-6">
+                              <label for="formularioImagen" class="my-2">Imagen: </label>
+                              <form action="post" id="formularioImagen" enctype="multipart/form-data">
+                                <input type="file" accept="img/*" class="form-control" id="editarImagenCliente">
+                              </form>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-12">
+                              <label for="editarFechaCliente" class="my-2">Fecha Nacimiento</label>
+                              <input class="form-control" type="date"  value="Valor Anterior" id="editarFechaCliente">
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-12">
+                              <label for="editarAboutCliente" class="my-2">Acerca de ti: </label>
+                              <textarea class="form-control" id="editarAboutCliente"></textarea>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-6">
+                              <label for="editarFacebookCliente" class="my-2">Facebook: </label>
+                              <input class="form-control" type="text" value="" id="editarFacebookCliente">
+                            </div>
+
+                            <div class="col-6">
+                              <label for="editarTwitterCliente" class="my-2">Twitter: </label>
+                              <input class="form-control" type="text" value="" id="editarTwitterCliente">
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-12">
+                              <label for="editarInstagramCliente" class="my-2">Instagram: </label>
+                              <input class="form-control" type="text" value="" id="editarInstagramCliente">
+                            </div>
+                          </div>
+                        </form>
+                        </div>
+                        <div class="modal-footer" id="botonesEditarInfoCliente">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                          <button type="button" class="btn btn-success">Editar</button>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- IDEA: AQUI TERMINA EL MODAL PARA EDITAR PRODUCTOS -->
+
 
       <script src="js/jquery-3.4.1.min.js"></script>
       <script src="js/popper.min.js"></script>

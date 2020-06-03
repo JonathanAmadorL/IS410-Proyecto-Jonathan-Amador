@@ -1,3 +1,81 @@
+/* IDEA: AQUI INICIA LOS ESTILOS NECESARIOS PARA EL MODAL DE CLIENTE */
+
+.modal_cliente_background{
+  background-color: rgba(0, 0, 0, 0.85);
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-oculto-cliente{
+  display: none;
+}
+
+.cerrar_modal_cliente{
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.formulario-cliente{
+  width: 400px;
+  background: rgb(36, 64, 96);
+  padding: 30px;
+  margin: auto;
+  margin-top: 100px;
+  border-radius: 15px;
+  color: white;
+}
+
+.formulario-cliente h4{
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.inputs-cliente{
+  width: 100%;
+  background: #24303c;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 16px;
+  border: 1px solid #1f53c5;
+  font-size: 18px;
+}
+
+.formulario-cliente p{
+  height: 40px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 40px;
+}
+
+#acepto_terminos_cliente{
+  padding-top: 10px; !important;
+}
+
+.formulario-cliente a{
+  color: white;
+  text-decoration: none;
+}
+
+.formulario-cliente a:hover{
+  color: white;
+  text-decoration: underline;
+}
+
+.formulario-cliente .boton{
+  width: 100%;
+  background: rgb(83, 23, 29);
+  border: none;
+  padding: 12px;
+  color: white;
+  margin:16px 0;
+  font-size: 16px;
+}
+
 
 /* IDEA: AQUI INICIA LOS ESTILOS PARA EL FORM DE EMPRESAS */
 .modal-empresa-background2{
@@ -37,4 +115,15 @@
 
 #msj-error{
   visibility: hidden!important;
+}
+
+
+.mx-auto {
+  display: flex;  /*display: flex; el cual vuelve al contenedor un elemento flex*/
+
+  align-items: center;  /*justify-content: center; le decimos a los elementos del contenedor flex que se ubiquen al centro del eje principal eje horizontal*/
+
+  justify-content: center; /*align-items: center; estamos diciendo que queremos que los elementos dentro del contenedor flex se ubiquen en el centro del eje secundario eje vertical*/
+
+  min-height: 100vh;  /*min-height: 100vh; que significa tome como altura mínima del contenedor el total del alto de la ventana del navegador web utilizado.*/
 }

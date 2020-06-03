@@ -9,7 +9,7 @@ function login(){
     }
   }).then(res=>{
     if(res.data.codigoResultado==1){
-      window.location.href = "productos.html";
+      window.location.href = "vistaCliente.html";
     }else{
       console.log("error dku");
     }

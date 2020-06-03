@@ -68,8 +68,6 @@
 
     for ($i=0; $i<sizeof($empresas);$i++){
       if($empresas[$i]["codigoEmpresa"]== $this->codigoEmpresa){
-        echo "se encontro la empresa";
-        echo (json_encode($empresas[$i]));
 
         $empresas[$i]["productos"][]= array(
           "codigoProducto" => $codigoProducto,
@@ -81,7 +79,6 @@
           "cantidadProducto" => $this ->cantidadProducto
         );
 
-        echo (json_encode($empresas[$i]));
 
         $archivoEmpresas= fopen('../data/empresas.json','w');
         fwrite($archivoEmpresas,json_encode($empresas));

@@ -19,8 +19,7 @@ switch ($_SERVER['REQUEST_METHOD']){
 
     );
     $producto-> guardarProducto();
-    $resultado["mensaje"]= "Guardar producto, informacion: ". json_encode($_POST);
-    echo json_encode($resultado);
+    echo json_encode($_POST);
   break;
 
   case 'GET':

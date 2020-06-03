@@ -238,3 +238,84 @@ function validar_Info_Empresa(){
   return (true);
   guardarEmpresas();
 }
+
+
+
+// IDEA: VAMOS A DARLE LOS EVENTOS A LOS BOTONES
+// IDEA: creamos una funcion que contendra un toogle
+const toggleModal_Cliente = () => {
+  //seleccionamos a este selector modal_cliente y a todas sus clases CSS (classList)
+  document.querySelector('.modal_cliente_background').classList.toggle('modal-oculto-cliente');
+};
+// mostramos el modal si le damos click al boton
+document.querySelector('#mostrar_modal_cliente').addEventListener('click', toggleModal_Cliente);
+//cerramos el modal si nos registramos
+//document.querySelector('#registrarse-btn-cliente').addEventListener('click' , toggleModal_Cliente);
+//cerramos el modal si le damos click al icono de la 'X'
+document.querySelector('#cerrar-modal-cliente').addEventListener('click',toggleModal_Cliente);
+
+
+const formulario_cliente = document.getElementById('formulario_cliente');
+
+formulario_cliente.addEventListener('submit',(e) => {
+  e.preventDefault();
+  e.stopPropagation();
+
+  validar_Info_Cliente();
+});
+
+function guardarClientes(){
+  if(validar_Info_Cliente()){
+    let cliente={
+        usuario_Cliente: document.getElementById('usuario-cliente').value,
+        email_Cliente: document.getElementById('email-cliente').value,
+        password_Cliente: document.getElementById('password-cliente').value,
+
+    };
+
+    limpiar_form_cliente();
+  }
+}
+
+
+function validar_Info_Cliente(){
+  var usuario_Cliente, email_Cliente, password_Cliente, repassword_Cliente;
+  usuario_Cliente=document.getElementById('usuario-cliente').value;
+  email_Cliente=document.getElementById('email-cliente').value;
+  password_Cliente=document.getElementById('password-cliente').value;
+  repassword_Cliente=document.getElementById('repassword-cliente').value;
+
+  var checkbox_cliente= document.getElementById('acepto_terminos_cliente').checked;
+
+
+  expresion_regular= /\w+@\w+\.+[a-z]/;  //para la forma correo152@yahoo.es  por ejemplo
+
+  //VERIFICAMOS SI LOS CAMPOS OBLIGATORIOS ESTAN VACIOS
+  if(usuario_Cliente == " " || email_Cliente == " " || password_Cliente== "" || repassword_Cliente==""  ){
+    alert("Debe rellenar los campos correspondientes");
+    return false;
+  }
+
+  else if (password_Cliente.length<8) {
+    alert("La contraseña debe tener minimo 8 caracteres");
+    return false;
+  }
+
+  else if (repassword_Cliente !== password_Cliente) {
+    alert("Las contraseñas no coinciden")
+    return false;
+  }
+
+  else if (!expresion_regular.test(email_Cliente)) {
+    alert("El correo no es válido segun el formato correo123@yahoo.es");
+    return false;
+  }
+  else if (checkbox_cliente==false) {
+    alert("Debe aceptar los terminos y condiciones para registrarse");
+    return false;
+  }
+
+  return (true);
+  guardarClientes();
+
+}

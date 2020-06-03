@@ -340,7 +340,7 @@ function verComentariosProducto(idProductoViendo){
             <div class="media mb-3 pb-5 border-bottom shadow">
               <img class="img-circle rounded-circle z-depth-1-half d-flex mr-3" id="cliente-imagen" src="https://mdbootstrap.com/img/Photos/Avatars/img (8).jpg" alt="">
               <div class="media-body">
-                <a href="#"> <h5 class="nombre-cliente text-info font-weight-bold">${comentarios[j].nombreCliente}</h5> </a>
+                <a href="#"> <h5 class="nombre-cliente text-info font-weight-bold">${comentarios[j].nombreCliente} ${comentarios[j].apellidoCliente}</h5> </a>
                 <ul class="likes-comentario mb-2 list-inline">
                   <li class="far fa-thumbs-up text-primary list-inline-item" id="like-btn"></li>
                   <li class="text-secondary list-unstyled list-inline-item">25 likes</li>
@@ -405,6 +405,66 @@ formularioAgregarProducto.addEventListener('submit',(e) => {
 
 function agregarProducto(){
 
+  if(validar_info_producto()){
+    empresaSeleccionada = document.getElementById('empresa-viendo');
+    nombreEmpresaSeleccionada = empresaSeleccionada.options[empresaSeleccionada.selectedIndex].text;
+    let producto= {
+      codigoEmpresa : document.getElementById('empresa-viendo').value,
+  	  nombreEmpresa : nombreEmpresaSeleccionada,
+  	 nombreProducto : document.getElementById('agregarNombreProducto').value,
+  	 precioProducto : document.getElementById('agregarPrecioProducto').value,
+  	 descuentoProducto : document.getElementById('agregarPctDescProducto').value,
+  	 descripcionProducto : document.getElementById('agregarDescripcionProducto').value,
+  	 imagenProducto : document.getElementById('agregarImagenProducto').value,
+  	 cantidadProducto : document.getElementById('agregarCantidadProducto').value
+    };
+    document.getElementById('btn-agregarProducto').disabled= false;
+    document.getElementById('btn-agregarProducto').innerHTML="Agregando...";
+    console.log('Producto a guardar: '+JSON.stringify(producto));
+
+    axios({
+      method:'POST',
+      url:  '../backend/api/productos.php',
+      responseType:'json',
+      data: producto
+    }).then(res=>{
+      console.log(res.data);
+    /*  var array=[];
+      $(":checkbox[name=checkboxSucursal]").each(function() {
+        if(this.checked){
+          array.push($(this).val());
+        }
+      });
+
+      for(let i=0; i<array.length; i++){
+        axios({
+          method: 'get',
+          url: '../backend/api/productosSucursal.php',
+          responseType: 'json',
+          data: {
+            codigoSucursal: array[i],
+            codigoEmpresa: empresaSeleccionada,
+            codigoProducto: ,
+            nombreProducto: "Caribe producto sucursal",
+            precioProducto: 15600,
+            cantidadProducto: 23
+          }
+        }).then(res=>{
+          console.log(res.data);
+        }).catch(error=>{
+          console.error(error);
+        });
+      }*/
+
+      limpiar_form_agregarProducto();
+      document.getElementById('btn-agregarProducto').disabled= false;
+      document.getElementById('btn-agregarProducto').innerHTML="Agregar";
+      listarProductosEnVenta();
+    }).catch(error=>{
+      console.error(error);
+    });
+
+  }
 
 }
 
@@ -440,16 +500,11 @@ function validar_info_producto(){
     return false;
   }
 
-  var array=[];
+  /*var array=[];
   $(":checkbox[name=checkboxSucursal]").each(function() {
     if(this.checked){
       array.push($(this).val());
     }
-  });
-  $(document).click(function() {
-    checkboxes = $(".checkboxSucursal:checked").length;
-    array.push(checkboxes);
-    console.log("Se seleccionaron "+checkboxes+" sucursales");
   });
 
 for(let i=0; i<array.length ; i++){
@@ -466,12 +521,10 @@ for(let i=0; i<array.length ; i++){
     }).catch(error=>{
       console.error(error);
     });
-  }
+  }*/
 
-
-
-
-
+  return true;
+  agregarProducto();
 
 }
 
@@ -502,7 +555,7 @@ function agregarSucursal(){
 
     axios({
       method:'POST',
-      url:  '../../pruebas_proyecto/backend/api/sucursales.php',
+      url:  '../backend/api/sucursales.php',
       responseType:'json',
       data: sucursal
     }).then(res=>{
@@ -510,11 +563,11 @@ function agregarSucursal(){
       limpiar_form_sucursal();
         document.getElementById('agregar-btn-sucursal').disabled= false;
         document.getElementById('agregar-btn-sucursal').innerHTML="Agregar";
+        listarSucursales();
     }).catch(error=>{
       console.error(error);
     });
 
-    listarSucursales();
   }
 }
 
@@ -558,4 +611,13 @@ function limpiar_form_sucursal() {
   document.getElementById('longitudSucursal').value=null;
   document.getElementById('latitudSucursal').value=null;
   document.getElementById('direccionSucursal').value=null;
+}
+
+function limpiar_form_agregarProducto(){
+    document.getElementById('agregarNombreProducto').value= null;
+    document.getElementById('agregarPrecioProducto').value= null;
+    document.getElementById('agregarPctDescProducto').value= null;
+    document.getElementById('agregarDescripcionProducto').value= null;
+    document.getElementById('agregarImagenProducto').value= null;
+    document.getElementById('agregarCantidadProducto').value= null;
 }

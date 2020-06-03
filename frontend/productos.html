@@ -74,84 +74,17 @@
 
         <section class="productos" id="productos">
 
-          <!-- IDEA: BOTN PARA REGRESAR A BIENVENIDA... TEMPORAL -->
-          <div class="flecha-arriba">
-            <a href="#bienvenida-productos"><i class="fas fa-angle-up"></i></a>
-          </div>
 
           <!-- IDEA: toda la section de productos -->
           <div class="container">
               <h1 class="text-center pt-5 pb-1">Productos</h1>
               <h3 class="text-center text-muted mb-5">Aqui encontraras las mejores ofertas</h3>
 
-              <div class="row pt-5">
+              <div class="row pt-5" id="productosSeccion">
 
-                <div class="d-flex justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 pb-5">
-                  <div class="card" onmouseover="desplegar(this)" onmouseout="cerrar(this)">
-                    <div class="imagen-card">
-                      <img src="img/compra-slide2.jpg" alt="">
-                    </div>
-                    <div class="contenido-card">
-                      <div class="titulo">Nombre del producto</div>
-                      <div class="sub-titulo-precio">L.150</div>
-                      <div class="botones-card">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore nisi mollitia, voluptate vero ipsa quo temporibus, quaerat enim doloribus hic magni, beatae. In est necessitatibus ullam facilis beatae, dolores tempore, sit quod atque mollitia nesciunt deserunt eos, recusandae ducimus molestiae!</p>
-                        <button type="button" name="button" class="modal-comprar">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="d-flex justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 pb-5">
-                  <div class="card">
-                    <div class="imagen-card">
-                      <img src="img/compra-slide2.jpg" alt="">
-                    </div>
-                    <div class="contenido-card">
-                      <div class="titulo">Nombre del producto</div>
-                      <div class="sub-titulo-precio">L.150</div>
-                      <div class="botones-card">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore nisi mollitia, voluptate vero ipsa quo temporibus, quaerat enim doloribus hic magni, beatae. In est necessitatibus ullam facilis beatae, dolores tempore, sit quod atque mollitia nesciunt deserunt eos, recusandae ducimus molestiae!</p>
-                        <button type="button" name="button">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="d-flex justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 pb-5">
-                  <div class="card">
-                    <div class="imagen-card">
-                      <img src="img/compra-slide2.jpg" alt="">
-                    </div>
-                    <div class="contenido-card">
-                      <div class="titulo">Nombre del producto</div>
-                      <div class="sub-titulo-precio">L.150</div>
-                      <div class="botones-card">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore nisi mollitia, voluptate vero ipsa quo temporibus, quaerat enim doloribus hic magni, beatae. In est necessitatibus ullam facilis beatae, dolores tempore, sit quod atque mollitia nesciunt deserunt eos, recusandae ducimus molestiae!</p>
-                        <button type="button" name="button">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="d-flex justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 pb-5">
-                  <div class="card">
-                    <div class="imagen-card">
-                      <img src="img/compra-slide2.jpg" alt="">
-                    </div>
-                    <div class="contenido-card">
-                      <div class="titulo">Nombre del producto</div>
-                      <div class="sub-titulo-precio">L.150</div>
-                      <div class="botones-card">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore nisi mollitia, voluptate vero ipsa quo temporibus, quaerat enim doloribus hic magni, beatae. In est necessitatibus ullam facilis beatae, dolores tempore, sit quod atque mollitia nesciunt deserunt eos, recusandae ducimus molestiae!</p>
-                        <button type="button" name="button">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
               </div>
-
 
 <!-- IDEA: BEUN AQUI VAMOS....PARA HACER LO DEL CAMBIO DE PAGINA PRIMERO TENGO QUE GENRAR DINAMICAMENTE
   TOOODOS LOS PRODUCTOS.... LUEGO BUSCAR DE QUE MANERA HCER UN IF(cantidadproductos=6)
@@ -163,10 +96,7 @@
 
 
  -->
-
-
-
-              <div class="row pt-4 pb-5 justify-content-center">
+              <!--<div class="row pt-4 pb-5 justify-content-center">
                 <ul class="d-flex" id="paginacion">
                   <li><a href=""><</a></li>
                   <li><a href="">1</a></li>
@@ -176,36 +106,17 @@
                   <li><a href="">5</a></li>
                   <li><a href="">></a></li>
                 </ul>
-              </div>
+              </div>-->
           </div>
 
           <div class="modal-background-compra">
             <!-- IDEA: CARD PARA EL MODAL PARA COMPRAR -->
-                <div class="producto-card">
-                  <nav>
-                      <i class="fas fa-arrow-left" id="flecha-regresar">  Regresar</i>
-                      <ul class="valoracion-estrellas-productos mb-2 mr-2">
-                        <li class="fas fa-star text-warning"></li>
-                        <li class="fas fa-star text-warning"></li>
-                        <li class="fas fa-star text-warning"></li>
-                        <li class="fas fa-star text-warning"></li>
-                        <li class="fas fa-star text-secondary"></li>
-                      </ul>
-                  </nav>
-                  <div class="producto-foto">
-                    <img src="img/raton-avatar2.png" alt="">
-                  </div>
-                  <div class="producto-descripcion">
-                    <h2 id="nombreProducto">Nombre del Producto</h2>
-                    <h4>Categoria del produto</h4>
-                    <h1>L.1,500</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam deleniti, dolore quibusdam reprehenderit nulla architecto exercitationem amet sunt corporis? Eius!</p>
-                    <button type="button" name="button" id="comprar"  data-toggle="modal" data-target="#modalFormularioComprar">Comprar</button>
-                    <button type="button" name="button" id="carrito" data-toggle="modal" data-target="#modalFormularioCarrito"><i class="fas fa-cart-plus"></i></button>
-                    <button type="button" name="button" id="comentarios" class="btn-comentarios"><i class="fas fa-comments"></i></button>
-                  </div>
+                <div class="producto-card" id="produtoCard">
+
                 </div>
           </div>
+
+
 
 
 
@@ -213,7 +124,7 @@
 
 
           <div class="modal-comentarios container my-5 py-5 px-5">
-            <section class="text-dark mb-5 hola">
+            <section class="text-dark mb-5" id="comentariosSeccion">
 
               <i class="fas fa-times" id="cerrar-modal-comentarios"></i>
 
@@ -336,7 +247,7 @@
 
         <form class="form-inline">
           <label for="unidadesComprar">Unidades a comprar</label>
-          <input type="text" id="unidadesComprar" class="form-control ml-sm-2">
+          <input type="text" id="unidadesComprar1" class="form-control ml-sm-2">
         </form>
 
       </div>
@@ -384,20 +295,16 @@
 </div>
 
 
-
-
-
-          <!-- IDEA: PROBANDO COSAS -->
-
-          <button type="button" name="button">HOLA</button>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, rerum.</p>
         </section>
       </main>
 
       <script src="js/jquery-3.4.1.min.js"></script>
       <script src="js/popper.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
       <script src="js/landing.js"></script>
       <script src="js/cards.js"> </script>
+      <script src="js/controlador-productos.js"> </script>
+
   </body>
 </html>

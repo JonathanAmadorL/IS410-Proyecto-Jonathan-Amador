@@ -11,6 +11,7 @@ switch ($_SERVER['REQUEST_METHOD']){
       $_POST["codigoCliente"],
       $_POST["codigoProducto"],
       $_POST["nombreCliente"],
+      $_POST["apellidoCliente"],
       $_POST["contenido"],
       $_POST["imagenCliente"]
 
@@ -39,6 +40,7 @@ switch ($_SERVER['REQUEST_METHOD']){
       $_PUT["codigoCliente"],
       $_PUT["codigoProducto"],
       $_PUT["nombreCliente"],
+      $_POST["apellidoCliente"],
       $_PUT["contenido"],
       $_PUT["imagenCliente"]
     );

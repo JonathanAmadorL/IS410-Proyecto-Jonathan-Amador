@@ -3,6 +3,7 @@
     private $codigoCliente;
     private $codigoProducto;
     private $nombreCliente;
+    private $apellidoCliente;
     private $contenido;
     private $imagenCliente;
 
@@ -10,6 +11,7 @@
       $codigoCliente,
       $codigoProducto,
       $nombreCliente,
+      $apellidoCliente,
       $contenido,
       $imagenCliente
     ){
@@ -17,6 +19,7 @@
       $this -> codigoCliente = $codigoCliente;
       $this -> codigoProducto = $codigoProducto;
       $this -> nombreCliente = $nombreCliente;
+      $this -> apellidoCliente = $apellidoCliente;
       $this -> contenido = $contenido;
       $this -> imagenCliente = $imagenCliente;
 
@@ -35,6 +38,7 @@
         "codigoCliente" => $this ->codigoCliente,
         "codigoProducto" => $this ->codigoProducto,
         "nombreCliente" => $this ->nombreCliente,
+        "apellidoCliente" => $this ->apellidoCliente,
         "contenido" => $this ->contenido,
         "imagenCliente" => $this ->imagenCliente
 
@@ -59,6 +63,7 @@
             "codigoComentario" => $codigoComentario,
             "codigoCliente" => $this ->codigoCliente,
             "nombreCliente" => $this ->nombreCliente,
+            "apellidoCliente" => $this ->apellidoCliente,
             "contenido" => $this ->contenido,
             "imagenCliente" => $this ->imagenCliente
           );
@@ -127,6 +132,7 @@
                   "codigoComentario" => $codigoComentario,
                   "codigoCliente" => $this ->codigoCliente,
                   "nombreCliente" => $this ->nombreCliente,
+                  "apellidoCliente" => $this ->apellidoCliente,
                   "contenido" => $this ->contenido,
                   "imagenCliente" => $this ->imagenCliente
                 );
@@ -186,6 +192,7 @@
             "codigoCliente" => $this ->codigoCliente,
             "codigoProducto" => $this ->codigoProducto,
             "nombreCliente" => $this ->nombreCliente,
+            "apellidoCliente" => $this ->apellidoCliente,
             "contenido" => $this ->contenido,
             "imagenCliente" => $this ->imagenCliente
           );
@@ -221,6 +228,7 @@
                   "codigoComentario" => $codigoComentarioGuardar,
                   "codigoCliente" => $this ->codigoCliente,
                   "nombreCliente" => $this ->nombreCliente,
+                  "apellidoCliente" => $this ->apellidoCliente,
                   "contenido" => $this ->contenido,
                   "imagenCliente" => $this ->imagenCliente
                 );
@@ -296,6 +304,7 @@
                       "codigoComentario" => $codigoComentarioGuardar,
                       "codigoCliente" => $this ->codigoCliente,
                       "nombreCliente" => $this ->nombreCliente,
+                      "apellidoCliente" => $this ->apellidoCliente,
                       "contenido" => $this ->contenido,
                       "imagenCliente" => $this ->imagenCliente
                     );
@@ -555,6 +564,31 @@
     public function setImagenCliente($imagenCliente)
     {
         $this->imagenCliente = $imagenCliente;
+
+        return $this;
+    }
+
+
+    /**
+     * Get the value of Apellido Cliente
+     *
+     * @return mixed
+     */
+    public function getApellidoCliente()
+    {
+        return $this->apellidoCliente;
+    }
+
+    /**
+     * Set the value of Apellido Cliente
+     *
+     * @param mixed $apellidoCliente
+     *
+     * @return self
+     */
+    public function setApellidoCliente($apellidoCliente)
+    {
+        $this->apellidoCliente = $apellidoCliente;
 
         return $this;
     }

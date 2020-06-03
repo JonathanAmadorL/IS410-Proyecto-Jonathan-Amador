@@ -5,242 +5,316 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width , initial-scale=1.0">
     <title>Registrarse</title>
-    <link rel="stylesheet" href="css/registro.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/registro.css">
     <link rel="stylesheet" href="css/all.css">
   </head>
 
   <body>
-    <div class=" container modal_empresa "  id="modal_empresa" style="background-color: white;">
 
-      <form class="formulario" name="formulario_empresa" id="formulario_empresa"  novalidate style="margin: 0 auto; " autocomplete="off" onsubmit="guardarEmpresas()">
-      <div class="cerrar_modal_empresa" id="cerrar-modal-empresa2"> <i class="fas fa-times" style="color: black;"></i> </div>
-      <h2>¡Registrate!</h2>
+    <nav class="navegacion">
+       <div class="logo">
+         <h4>LOGO</h4>
+       </div>
 
+       <ul class="enlaces">
+         <li><a href="landing.html">Inicio</a></li>
+         <li><a href="productos.html">Productos</a></li>
+         <li><a href="registro.html">Registrarse</a></li>
+         <li><a  href="#modalLogin" data-toggle="modal">Login</a></li>
+         <li><a href="super.html">SuperUser</a></li>
+       </ul>
+
+       <div class="desplegar">
+         <div class="linea1"></div>
+         <div class="linea2"></div>
+         <div class="linea3"></div>
+       </div>
+     </nav>
+
+    <div class="container">
       <div class="row">
-
-        <!-- IDEA: INPUT NOMBRE EMPRESA -->
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <div class="form-group">
-            <div class="input-group" style="margin-bottom: 10px">
-              <input class="inputs-empresa form-control" name="campo-obligatorio" type="text" placeholder="Nombre de la empresa:" id="usuario-empresa">
-              <div class="input-group-append">
-                <span class="input-group-text"><i class="fas fa-briefcase"></i></span>
-              </div>
-            </div>
-            <div class="mensaje-error" id="mensaje-usuario"> *Este campo es obligatorio</div>
-          </div>
-
-        </div>
-
-        <!-- IDEA: INPUT EMAIL-EMPRESA -->
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <div class="form-group">
-            <div class="input-group" style="margin-bottom: 10px;">
-              <input class="inputs-empresa form-control" name="campo-obligatorio" type="email" placeholder="E-mail:" id="email-empresa" >
-              <div class="input-group-append">
-                <span class="input-group-text"><i class="fas fa-at"></i></span>
-              </div>
-            </div>
-          <div class="mensaje-error" id="mensaje-email"> *Este campo es obligatorio</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <!-- IDEA: INPUT CONTRSEÑA EMPRESA -->
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-          <div class="form-group">
-            <div class="input-group" style="margin-bottom: 10px;">
-              <input class="inputs-empresa form-control" name="campo-obligatorio" type="password" placeholder="Contraseña:" id="password-empresa">
-              <div class="input-group-append">
-                <span class="input-group-text"> <i class="fas fa-lock"></i></span>
-              </div>
-            </div>
-          <div class="mensaje-error" id="mensaje-password"> *Este campo es obligatorio</div>
-          </div>
-
-        </div>
-
-          <!-- IDEA: INPUT REPETIR CONTRASEÑA -->
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-          <div class="form-group">
-            <div class="input-group" style="margin-bottom: 10px;">
-              <input class="inputs-empresa form-control" name="campo-obligatorio" type="password" placeholder="Repetir contraseña:" id="repassword-empresa"  >
-              <div class="input-group-append">
-                <span class="input-group-text"> <i class="fas fa-lock"></i></span>
-              </div>
-            </div>
-          <div class="mensaje-error" id="mensaje-repassword"> *Este campo es obligatorio</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-
-        <!-- IDEA: INPUT PAIS EMPRESA -->
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <div class="form-group">
-            <div class="input-group" style="margin-bottom: 10px;">
-              <input class="inputs-empresa form-control" name="campo-obligatorio" type="text" placeholder="País:" id="pais-empresa">
-              <div class="input-group-append">
-                <span class="input-group-text"><i class="fas fa-globe"></i></span>
-              </div>
-            </div>
-          <div class="mensaje-error" id="mensaje-pais"> *Este campo es obligatorio</div>
-          </div>
-
-        </div>
-
-        <!-- IDEA: INPUT LONGITUD EMPRESA -->
-        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6">
-          <div class="form-group">
-            <div class="input-group" style="margin-bottom: 10px;">
-              <input class="inputs-empresa form-control" name="campo-obligatorio" type="text" placeholder="Longitud:" id="longitud-empresa" >
-              <div class="input-group-append">
-                <span class="input-group-text"> <i class="far fa-compass"></i></span>
-              </div>
-            </div>
-          <div class="mensaje-error" id="mensaje-longitud"> *Este campo es obligatorio</div>
-          </div>
-        </div>
-
-
-        <!-- IDEA: INPUT LATITUD EMPRESA -->
-        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6">
-          <div class="form-group">
-            <div class="input-group" style="margin-bottom: 10px;">
-              <input class="inputs-empresa form-control" name="campo-obligatorio" type="text" placeholder="Latitud:" id="latitud-empresa">
-              <div class="input-group-append">
-                <span class="input-group-text"> <i class="far fa-compass"></i></span>
-              </div>
-            </div>
-          <div class="mensaje-error" id="mensaje-latitud">*Este campo es obligatorio</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-
-        <!-- IDEA: INPUT BANNER EMPRESA -->
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <div class="form-group">
-            <div class="input-group" style="margin-bottom: 10px;">
-              <input class="inputs-empresa form-control"  type="text" placeholder="URL de su banner:" id="banner-empresa">
-              <div class="input-group-append">
-                <span class="input-group-text"> <i class="far fa-image"></i></span>
-              </div>
-            </div>
-          <div class=""></div>
-          </div>
-
-        </div>
-
-        <!-- IDEA: INPUT LOGOTIPO EMPRESA -->
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <div class="form-group">
-            <div class="input-group" style="margin-bottom: 10px;">
-              <input class="inputs-empresa form-control" name="campo-obligatorio" type="text" placeholder="URL de su logotipo:" id="logotipo-empresa">
-              <div class="input-group-append">
-                <span class="input-group-text"> <i class="far fa-image"></i></span>
-              </div>
-            </div>
-          <div class="mensaje-error" id="mensaje-logo">*Este campo es obligatorio</div>
-          </div>
-        </div>
-      </div>
-
-
-    <h2>Redes Sociales</h2>
-
-    <div class="row">
-
-      <!-- IDEA: INPUT FACEEBOK -->
-      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        <div class="form-group">
-          <div class="input-group" style="margin-bottom: 10px;">
-            <input class="inputs-empresa form-control" type="text" placeholder="Facebook:" id="facebook-empresa">
-            <div class="input-group-append">
-              <span class="input-group-text"> <i class="fab fa-facebook"></i> </span>
-            </div>
-          </div>
-          <div class="mensaje-error" id="mensaje-logo">*Este campo es obligatorio</div>
-        </div>
-      </div>
-
-      <!-- IDEA: INPUT TWITTER -->
-      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        <div class="form-group">
-          <div class="input-group" style="margin-bottom: 10px;">
-            <input class="inputs-empresa form-control" type="text" placeholder="Twitter:" id="twitter-empresa">
-            <div class="input-group-append">
-              <span class="input-group-text"> <i class="fab fa-twitter"></i></span>
-            </div>
-          </div>
-        <div class=""> </div>
-        </div>
-      </div>
-
-
-      <!-- IDEA: INPUT INSTAGRAM -->
-      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        <div class="form-group">
-          <div class="input-group" style="margin-bottom: 10px;">
-            <input class="inputs-empresa form-control" type="text" placeholder="Instagram:" id="instagram-empresa">
-            <div class="input-group-append">
-              <span class="input-group-text"> <i class="fab fa-instagram"></i> </span>
-            </div>
-          </div>
-        <div class=""> </div>
-        </div>
-      </div>
+ 				<div class="mx-auto">
+           <button  type="button" class="btn btn-dark btn-lg m-5" id="mostrar_modal_cliente" >Cliente</button>
+             <button  type="button" class="btn btn-dark btn-lg m-5" data-target="#modalRegistarseEmpresa" data-toggle="modal" >Empresa</button>
+ 				</div>
+ 			</div>
     </div>
 
 
 
-    <br>
+    <!-- IDEA: MODAL PARA CLIENTE -->
 
-    <div class="row">
+    <div class="modal_cliente_background  modal-oculto-cliente">
+      <form class="formulario-cliente" id="formulario_cliente" novalidate autocomplete="off" onsubmit="guardarClientes()">
+        <div class="cerrar_modal_cliente" id="cerrar-modal-cliente"> <i class="fas fa-times"></i> </div>
+        <h4>¡Registrate!</h4>
+        <input class="inputs-cliente" type="text" placeholder="Nombre o usuario:" id="usuario-cliente">
+        <input class="inputs-cliente" type="email" placeholder="Email:" id="email-cliente">
+        <input class="inputs-cliente" type="password" placeholder="Contraseña:" id="password-cliente">
+        <input class="inputs-cliente" type="password" placeholder="Repetir Contraseña:" id="repassword-cliente">
+        <div class="row">
+          <div class="col-1" style="justify-content: center;">
+            <input type="checkbox" id="acepto_terminos_cliente" name="" value="">
+          </div>
+          <div class="col-11">
+            <label for="acepto_terminos_cliente"><p>Acepto los Terminos y Condiciones de uso</p></label>
+          </div>
 
-      <!-- IDEA: INPUT DESCRIPCION EMPRESA -->
-      <div class="col-12">
-        <div class="form-group">
-          <textarea class="form-control" name="campo-obligatorio"  placeholder="Describa un poco su empresa:" style="width:80%;" id="descripcion-empresa"></textarea>
-          <div class="mensaje-error" id="mensaje-descripcion">*Este campo es obligatorio</div>
         </div>
-      </div>
+
+        <input class="boton" type="submit" value="Registrarse" id="registrarse-btn-cliente">
+        <p><a href="#modalLogin" data-toggle="modal">Ya tengo cuenta</a></p>
+      </form>
     </div>
 
 
-    <div class="row text-center">
 
-      <!-- IDEA: ACEPTO TERMINOS -->
-      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        <div class="form-group">
-          <input type="checkbox" id="acepto_terminos_empresa" name="" value="">
-          <label for="acepto_terminos">Acepto los Terminos y Condiciones de uso</label>
+    <!-- IDEA: HAER EL MODAL CON BOOTSTRAP PARA EL REGISTRO EMPRESAS -->
+        <div class="modal fade" id="modalRegistarseEmpresa" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg text-center">
+              <div class="modal-content p-2">
+
+              <div class=" container modal_empresa "  id="modal_empresa" style="background-color: white">
+
+                <form class="formulario" name="formulario_empresa" id="formulario_empresa"  novalidate style="margin: 0 auto; " autocomplete="off" onsubmit="guardarEmpresas()">
+                <div class="close" data-dismiss="modal" aria-label="Close"  id="cerrar-modal-empresa2"> <i class="fas fa-times" style="color: black; cursor: pointer"></i> </div>
+                <h2>¡Registrate!</h2>
+
+            <div class="row">
+
+              <!-- IDEA: INPUT NOMBRE EMPRESA -->
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="form-group">
+                  <div class="input-group" style="margin-bottom: 10px">
+                    <input class="inputs-empresa form-control" name="campo-obligatorio" type="text" placeholder="Nombre de la empresa:" id="usuario-empresa">
+                    <div class="input-group-append">
+                      <span class="input-group-text"><i class="fas fa-briefcase"></i></span>
+                    </div>
+                  </div>
+                  <div class="mensaje-error" id="mensaje-usuario"> *Este campo es obligatorio</div>
+                </div>
+
+              </div>
+
+              <!-- IDEA: INPUT EMAIL-EMPRESA -->
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="form-group">
+                  <div class="input-group" style="margin-bottom: 10px;">
+                    <input class="inputs-empresa form-control" name="campo-obligatorio" type="email" placeholder="E-mail:" id="email-empresa" >
+                    <div class="input-group-append">
+                      <span class="input-group-text"><i class="fas fa-at"></i></span>
+                    </div>
+                  </div>
+                <div class="mensaje-error" id="mensaje-email"> *Este campo es obligatorio</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <!-- IDEA: INPUT CONTRSEÑA EMPRESA -->
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="form-group">
+                  <div class="input-group" style="margin-bottom: 10px;">
+                    <input class="inputs-empresa form-control" name="campo-obligatorio" type="password" placeholder="Contraseña:" id="password-empresa">
+                    <div class="input-group-append">
+                      <span class="input-group-text"> <i class="fas fa-lock"></i></span>
+                    </div>
+                  </div>
+                <div class="mensaje-error" id="mensaje-password"> *Este campo es obligatorio</div>
+                </div>
+
+              </div>
+
+                <!-- IDEA: INPUT REPETIR CONTRASEÑA -->
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="form-group">
+                  <div class="input-group" style="margin-bottom: 10px;">
+                    <input class="inputs-empresa form-control" name="campo-obligatorio" type="password" placeholder="Repetir contraseña:" id="repassword-empresa"  >
+                    <div class="input-group-append">
+                      <span class="input-group-text"> <i class="fas fa-lock"></i></span>
+                    </div>
+                  </div>
+                <div class="mensaje-error" id="mensaje-repassword"> *Este campo es obligatorio</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+
+              <!-- IDEA: INPUT PAIS EMPRESA -->
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="form-group">
+                  <div class="input-group" style="margin-bottom: 10px;">
+                    <input class="inputs-empresa form-control" name="campo-obligatorio" type="text" placeholder="País:" id="pais-empresa">
+                    <div class="input-group-append">
+                      <span class="input-group-text"><i class="fas fa-globe"></i></span>
+                    </div>
+                  </div>
+                <div class="mensaje-error" id="mensaje-pais"> *Este campo es obligatorio</div>
+                </div>
+
+              </div>
+
+              <!-- IDEA: INPUT LONGITUD EMPRESA -->
+              <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <div class="form-group">
+                  <div class="input-group" style="margin-bottom: 10px;">
+                    <input class="inputs-empresa form-control" name="campo-obligatorio" type="text" placeholder="Longitud:" id="longitud-empresa" >
+                    <div class="input-group-append">
+                      <span class="input-group-text"> <i class="far fa-compass"></i></span>
+                    </div>
+                  </div>
+                <div class="mensaje-error" id="mensaje-longitud"> *Este campo es obligatorio</div>
+                </div>
+              </div>
+
+
+              <!-- IDEA: INPUT LATITUD EMPRESA -->
+              <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <div class="form-group">
+                  <div class="input-group" style="margin-bottom: 10px;">
+                    <input class="inputs-empresa form-control" name="campo-obligatorio" type="text" placeholder="Latitud:" id="latitud-empresa">
+                    <div class="input-group-append">
+                      <span class="input-group-text"> <i class="far fa-compass"></i></span>
+                    </div>
+                  </div>
+                <div class="mensaje-error" id="mensaje-latitud">*Este campo es obligatorio</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+
+              <!-- IDEA: INPUT BANNER EMPRESA -->
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="form-group">
+                  <div class="input-group" style="margin-bottom: 10px;">
+                    <input class="inputs-empresa form-control"  type="text" placeholder="URL de su banner:" id="banner-empresa">
+                    <div class="input-group-append">
+                      <span class="input-group-text"> <i class="far fa-image"></i></span>
+                    </div>
+                  </div>
+                <div class=""></div>
+                </div>
+
+              </div>
+
+              <!-- IDEA: INPUT LOGOTIPO EMPRESA -->
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="form-group">
+                  <div class="input-group" style="margin-bottom: 10px;">
+                    <input class="inputs-empresa form-control" name="campo-obligatorio" type="text" placeholder="URL de su logotipo:" id="logotipo-empresa">
+                    <div class="input-group-append">
+                      <span class="input-group-text"> <i class="far fa-image"></i></span>
+                    </div>
+                  </div>
+                <div class="mensaje-error" id="mensaje-logo">*Este campo es obligatorio</div>
+                </div>
+              </div>
+            </div>
+
+
+          <h2>Redes Sociales</h2>
+
+          <div class="row">
+
+            <!-- IDEA: INPUT FACEEBOK -->
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              <div class="form-group">
+                <div class="input-group" style="margin-bottom: 10px;">
+                  <input class="inputs-empresa form-control" type="text" placeholder="Facebook:" id="facebook-empresa">
+                  <div class="input-group-append">
+                    <span class="input-group-text"> <i class="fab fa-facebook"></i> </span>
+                  </div>
+                </div>
+                <div class="mensaje-error" id="mensaje-logo">*Este campo es obligatorio</div>
+              </div>
+            </div>
+
+            <!-- IDEA: INPUT TWITTER -->
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              <div class="form-group">
+                <div class="input-group" style="margin-bottom: 10px;">
+                  <input class="inputs-empresa form-control" type="text" placeholder="Twitter:" id="twitter-empresa">
+                  <div class="input-group-append">
+                    <span class="input-group-text"> <i class="fab fa-twitter"></i></span>
+                  </div>
+                </div>
+              <div class=""> </div>
+              </div>
+            </div>
+
+
+            <!-- IDEA: INPUT INSTAGRAM -->
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              <div class="form-group">
+                <div class="input-group" style="margin-bottom: 10px;">
+                  <input class="inputs-empresa form-control" type="text" placeholder="Instagram:" id="instagram-empresa">
+                  <div class="input-group-append">
+                    <span class="input-group-text"> <i class="fab fa-instagram"></i> </span>
+                  </div>
+                </div>
+              <div class=""> </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <br>
+
+          <div class="row">
+
+            <!-- IDEA: INPUT DESCRIPCION EMPRESA -->
+            <div class="col-12">
+              <div class="form-group">
+                <textarea class="form-control" name="campo-obligatorio"  placeholder="Describa un poco su empresa:" style="width:80%;" id="descripcion-empresa"></textarea>
+                <div class="mensaje-error" id="mensaje-descripcion">*Este campo es obligatorio</div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row text-center">
+
+            <!-- IDEA: ACEPTO TERMINOS -->
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              <div class="form-group">
+                <input type="checkbox" id="acepto_terminos_empresa" name="" value="">
+                <label for="acepto_terminos">Acepto los Terminos y Condiciones de uso</label>
+              </div>
+            </div>
+
+            <!-- IDEA: BOTON DE REGISTRARSE -->
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              <div class="form-group">
+                <button id="registrarse-btn-empresa" type="submit" class="btn btn-dark btn-lg" >Registrarse</button>
+              </div>
+            </div>
+
+
+            <!-- IDEA: ABRIR MODAL SI YA TIENE CUENTA -->
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              <div class="form-group">
+                <p><a href="#modalLogin" data-toggle="modal">Ya tengo cuenta</a></p>
+              </div>
+            </div>
+          </div>
+
+
+        </form>
         </div>
+
       </div>
-
-      <!-- IDEA: BOTON DE REGISTRARSE -->
-      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        <div class="form-group">
-          <button id="registrarse-btn-empresa" type="submit" class="btn btn-dark btn-lg" >Registrarse</button>
-        </div>
-      </div>
+</div>
+</div>
 
 
-      <!-- IDEA: ABRIR MODAL SI YA TIENE CUENTA -->
-      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        <div class="form-group">
-          <p><a href="#modalLogin" data-toggle="modal">Ya tengo cuenta</a></p>
-        </div>
-      </div>
-    </div>
 
 
-  </form>
-  </div>
+
 
 
 
@@ -249,6 +323,7 @@
 
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="js/landing.js"></script>
     <script src="js/controlador-registro.js"> </script>
     <script src="js/bootstrap.min.js"></script>
   </body>

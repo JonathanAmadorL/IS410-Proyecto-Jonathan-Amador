@@ -114,40 +114,6 @@
 
 
 
-
-
-
-          <!-- IDEA: AQUI ESTAN LOS PRODCUTOS VENDIDOS -->
-          <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Productos Vendidos</h2>
-
-          <div class="divider-custom">
-              <div class="divider-custom-line"></div>
-              <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-              <div class="divider-custom-line"></div>
-          </div>
-
-          <div class="row mb-5" >
-
-            <div class="d-flex justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 pb-5">
-              <div class="card">
-                <div class="imagen-card">
-                  <img src="img/compra-slide2.jpg" alt="">
-                </div>
-                <div class="contenido-card">
-                  <div class="titulo">Nombre del producto</div>
-                  <div class="sub-titulo-precio">L.150</div>
-                  <div class="botones-card">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore nisi mollitia, voluptate vero ipsa quo temporibus, quaerat enim doloribus hic magni, beatae. In est necessitatibus ullam facilis beatae, dolores tempore, sit quod atque mollitia nesciunt deserunt eos, recusandae ducimus molestiae!</p>
-                    <button type="button" name="button">Comprar</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-
-          </div>
-
             <!-- IDEA: Bloque para los planes -->
           <div class="card-deck mb-3 text-center ">
             <div class="card mb-4 shadow-sm " >
@@ -360,7 +326,7 @@
         </button>
       </div>
       <div class="modal-body" >
-        <form class="" action="index.html" method="post" id="formularioAgregarProducto">
+        <form class="" id="formularioAgregarProducto" novalidate autocomplete="off">
           <div class="form-group">
             <label for="agregarNombreProducto">Nombre Producto:</label>
             <input class="form-control" type="text" id="agregarNombreProducto">
@@ -411,7 +377,7 @@
             <!-- IDEA: AQUI SE GENERA LA LISTA DE SUCURSALES EN A FUNCION listarSucursales() -->
           </div>
 
-          <button type="button" class="btn btn-info mx-auto"  id="btn-agregarProducto" onclick="validar_info_producto()">Agregar</button>
+          <button type="button" class="btn btn-info mx-auto"  id="btn-agregarProducto" onclick="agregarProducto()">Agregar</button>
         </form>
       </div>
       <div class="modal-footer">

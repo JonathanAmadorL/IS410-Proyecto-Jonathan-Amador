@@ -36,6 +36,17 @@ flecha_regresar.addEventListener('click',function(){
 });
 
 
+function modalComprar(){
+  $('.modal-background-compra').css("visibility", "visible");
+  $('.modal-background-compra').css("opacity", "1");
+}
+
+function cerrarModalComprar() {
+  $('.modal-background-compra').css("visibility", "hidden");
+  $('.modal-background-compra').css("opacity", "0");
+}
+
+
 
 function modalEditar(){
   $('.modal-background-editar').css("visibility", "visible");
