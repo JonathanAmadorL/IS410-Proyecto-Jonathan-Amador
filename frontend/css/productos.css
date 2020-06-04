@@ -22,7 +22,7 @@
 .atraccion-texto h1{
   font-size: 80px;
   font-weight: 500;
-  background: linear-gradient(to right, rgb(29, 101, 34), rgb(127, 139, 172));
+  background: linear-gradient(to right, #b3762b, rgb(127, 139, 172));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -31,7 +31,7 @@
   margin-top: 5px;
   margin-bottom: 10px;
   font-size: 25px;
-  color: rgb(157, 162, 70);
+  color: #b3762b;
 }
 
 .atraccion-texto small{
@@ -76,7 +76,7 @@
 
 .atraccion-imagenes img{
   height: 40vh;
-  filter: drop-shadow(0px 5px 3px rgb(41, 138, 107)); /*agregar sombra a una imagen*/
+  filter: drop-shadow(0px 5px 3px #b3762b); /*agregar sombra a una imagen*/
   animation: drop 1.5s ease;
 }
 

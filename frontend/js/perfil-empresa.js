@@ -1,3 +1,22 @@
+function readCookie(name) {
+
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+
+  for(var i=0;i < ca.length;i++) {
+
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    if (c.indexOf(nameEQ) == 0) {
+      return decodeURIComponent( c.substring(nameEQ.length,c.length) );
+    }
+
+  }
+
+  return null;
+}
+
+
 
 function listarEmpresas(){
 
@@ -17,13 +36,13 @@ function listarEmpresas(){
   });
 
 }
-listarEmpresas();
 
 
 function portafolioEmpresa(){
+  var empresa= readCookie("codigoEmpresa");
   axios({
     method: 'get',
-    url: '../backend/api/empresas.php?id='+document.getElementById('empresa-viendo').value,
+    url: '../backend/api/empresas.php?id='+empresa,
     responseType: 'json'
   }).then(res => {
     perfil=res.data;
@@ -60,9 +79,10 @@ function portafolioEmpresa(){
 
 
 function listarProductosEnVenta(){
+  var empresa= readCookie("codigoEmpresa");
   axios({
     method: 'get',
-    url: '../backend/api/empresas.php?id='+document.getElementById('empresa-viendo').value,
+    url: '../backend/api/empresas.php?id='+empresa,
     responseType: 'json'
   }).then(res=>{
     console.log(res.data);
@@ -124,9 +144,10 @@ function listarProductosEnVenta(){
 
 
 function listarSucursales(){
+  var empresa= readCookie("codigoEmpresa");
   axios({
     method: 'get',
-    url: '../backend/api/empresas.php?id='+document.getElementById('empresa-viendo').value,
+    url: '../backend/api/empresas.php?id='+empresa,
     responseType: 'json'
   }).then(res=>{
     console.log(res.data);
@@ -204,10 +225,11 @@ function listarSucursales(){
 
 
 function verProducto(idProductoViendo) {
+  var empresa= readCookie("codigoEmpresa");
   document.getElementById('produtoCard').innerHTML = '';
   axios({
     method: 'get',
-    url: '../backend/api/empresas.php?id='+document.getElementById('empresa-viendo').value,
+    url: '../backend/api/empresas.php?id='+empresa,
     responseType: 'json'
   }).then(res => {
     productos=res.data.productos;
@@ -245,10 +267,11 @@ function verProducto(idProductoViendo) {
 }
 
 function verEditarProducto(idProductoViendo){
+  var empresa= readCookie("codigoEmpresa");
   document.getElementById('formularioEditar').innerHTML='';
   axios({
     method: 'get',
-    url: '../backend/api/empresas.php?id='+document.getElementById('empresa-viendo').value,
+    url: '../backend/api/empresas.php?id='+empresa,
     responseType: 'json'
   }).then(res=>{
     productos=res.data.productos;
@@ -314,6 +337,7 @@ function verEditarProducto(idProductoViendo){
 
 
 function verComentariosProducto(idProductoViendo){
+  var empresa= readCookie("codigoEmpresa");
   document.getElementById('comentariosSeccion').innerHTML =
   `
   <i class="fas fa-times" id="cerrar-modal-comentarios" onclick="cerrarModalComentarios()"></i>
@@ -325,7 +349,7 @@ function verComentariosProducto(idProductoViendo){
   `;
   axios({
     method: 'get',
-    url: '../backend/api/empresas.php?id='+document.getElementById('empresa-viendo').value,
+    url: '../backend/api/empresas.php?id='+empresa,
     responseType: 'json'
   }).then(res=>{
     productos=res.data.productos;

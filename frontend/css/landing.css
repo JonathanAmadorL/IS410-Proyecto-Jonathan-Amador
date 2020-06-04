@@ -5,10 +5,12 @@
 }
 body{
   /*background-color: rgb(94, 156, 158);*/
-  background-color: rgb(129, 72, 71);
+  /*background-color: rgb(129, 72, 71);*/
+  background-color: #151e29;
   width: 100%;
   height: 100vh;
 }
+
 .navegacion{
   position: absolute;
   display: flex;
@@ -17,8 +19,9 @@ body{
   width: 100%;
   min-height: 10vh;
   background: transparent;
-  opacity: 0.7;
+  opacity: 0.9;
   border: 1px solid rgb(68, 78, 77);
+  /*border: 1px solid #b3762b;*/
   z-index: 1;
   /*background-color: rgb(121, 87, 42);*/
 }
@@ -34,7 +37,9 @@ body{
 }
 
 .enlaces a{
-  color: rgb(226, 231, 226);
+  /*color: rgb(226, 231, 226);*/
+  color: #b3762b;
+  font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
@@ -49,7 +54,7 @@ body{
 .desplegar div{
   width: 25px;
   height: 3px;
-  background-color: rgb(221, 219, 222);
+  background-color: #b3762b;
   margin: 5px;
   transition: all 0.3s ease;
 }
@@ -70,7 +75,8 @@ body{
     right: 0px;
     height: 90vh;
     top:10vh;
-    background-color: rgb(93, 131, 125);
+  /*  background-color: rgb(93, 131, 125);*/
+    background-color: #151e29;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -159,7 +165,7 @@ ol{
   align-items: center;
   text-align: center;
 
-  color: white;
+  color: #b3762b;
   z-index: 1;
 
 }
@@ -177,14 +183,16 @@ ol{
 
 .slider .slider-contenido #btn-slider{
   background: rgba(46, 50, 49,0.1);
-  color: white;
+  color: #b3762b;
+  /*color: white;*/
   padding: 0.2em 0.8em;
   border-radius: 10%;
 }
 
 .slider .slider-contenido #btn-slider:hover{
   border: 0.5px solid grey;
-  color: rgb(61, 65, 70);
+  /*color: rgb(61, 65, 70);*/
+  color: #b3762b;
   text-decoration: none;
 }
 
@@ -207,7 +215,7 @@ ol{
   font-size: 15px;
   margin: 2px 10px;
   cursor: pointer;
-  color: #484549;
+  color: #b3762b;
 }
 
 .prev, .next{
@@ -232,20 +240,22 @@ ol{
 
 
 .boton-slide{
-  color: #20bf6b !important;
+  color: #b3762b !important;
+
+  /*color: #20bf6b !important;*/
   text-decoration: none;
   text-transform: uppercase;
   background: #ffffff;
   padding: 15px;
-  border: 4px solid #20bf6b !important;
+  border: 4px solid #b3762b !important;
   border-radius: 6px;
   display: inline-block;
   transition: all 0.3s ease 0s;
 }
 
 .boton-slide:hover{
-  color: #494949 !important;
+  color: #b3762b !important;
   border-radius: 50px;
-  border-color: #494949 !important;
+  border-color: #b3762b !important;
   transition: all 0.3s ease 0s;
 }

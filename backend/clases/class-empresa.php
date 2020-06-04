@@ -181,6 +181,19 @@
 
   }
 
+  public static function verificarEmpresa($emailEmpresa, $passwordEmpresa){
+    $contenidoArchivoEmpresas= file_get_contents('../data/empresas.json');
+    $empresas=json_decode($contenidoArchivoEmpresas,true);
+
+    for($i=0; $i<sizeof($empresas); $i++){
+      if($empresas[$i]["emailEmpresa"]== $emailEmpresa && $empresas[$i]["passwordEmpresa"]== $passwordEmpresa){
+        return $empresas[$i];
+      }
+    }
+    return null;
+  }
+
+
 
 
 
