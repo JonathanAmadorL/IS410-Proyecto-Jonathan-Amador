@@ -1,11 +1,11 @@
-function login(){
+function loginCliente(){
   axios({
     url: "../backend/api/loginClientes.php",
     method: "post",
     responseType: 'json',
     data: {
-      emailCliente: document.getElementById('emailInput').value,
-      passwordCliente: document.getElementById('passwordInput').value
+      emailCliente: document.getElementById('emailInputCliente').value,
+      passwordCliente: document.getElementById('passwordInputCliente').value
     }
   }).then(res=>{
     if(res.data.codigoResultado==1){
@@ -25,8 +25,8 @@ function loginEmpresa(){
     method: "post",
     responseType: 'json',
     data: {
-      emailEmpresa: document.getElementById('emailInput').value,
-      passwordEmpresa: document.getElementById('passwordInput').value
+      emailEmpresa: document.getElementById('emailInputEmpresa').value,
+      passwordEmpresa: document.getElementById('passwordInputEmpresa').value
     }
   }).then(res=>{
     if(res.data.codigoResultado==1){

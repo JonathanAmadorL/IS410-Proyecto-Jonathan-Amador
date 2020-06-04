@@ -124,98 +124,7 @@
 
           <div class="modal-comentarios container my-5 py-5 px-5">
             <section class="text-dark mb-5" id="comentariosSeccion">
-
-              <i class="fas fa-times" id="cerrar-modal-comentarios"></i>
-
-              <h3 class="font-weight-bold text-center mb-5">
-                Comentarios
-              </h3>
-
-              <div class="media mb-3 pb-5 border-bottom shadow">
-                <img class="img-circle rounded-circle z-depth-1-half d-flex mr-3" id="cliente-imagen" src="https://mdbootstrap.com/img/Photos/Avatars/img (8).jpg" alt="">
-                <div class="media-body">
-                  <a href="#"> <h5 class="nombre-cliente text-info font-weight-bold">Juan DKU</h5> </a>
-                  <ul class="likes-comentario mb-2 list-inline">
-                    <li class="far fa-thumbs-up text-primary list-inline-item" id="like-btn"></li>
-                    <li class="text-secondary list-unstyled list-inline-item">25 likes</li>
-                    <li class="far fa-thumbs-down text-danger list-inline-item" id="dislike-btn"></li>
-                    <li class="text-secondary list-unstyled list-inline-item">5 dislikes</li>
-                  </ul>
-
-
-                  <div class="card-fecha">
-                    <ul class="list-unstyled mb-1">
-                       <li class="comment-date font-small text-muted">
-                         <i class="far fa-clock"></i> 05/10/2015</li>
-                     </ul>
-                  </div>
-
-                  <p class="text-dark text-justify">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                    nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-                </div>
-              </div>
-
-              <div class="media mb-3 pb-3 border-bottom shadow">
-                <img class="img-circle rounded-circle z-depth-1-half d-flex mr-3" id="cliente-imagen" src="https://mdbootstrap.com/img/Photos/Avatars/img (8).jpg" alt="">
-                <div class="media-body">
-                  <a href="#"> <h5 class="nombre-cliente text-info font-weight-bold">Juan DKU</h5> </a>
-                  <ul class="likes-cometario mb-2 list-inline">
-                    <li class="far fa-thumbs-up text-primary list-inline-item"></li>
-                    <li class="text-secondary list-unstyled list-inline-item">25 likes</li>
-                    <li class="far fa-thumbs-down text-danger list-inline-item"></li>
-                    <li class="text-secondary list-unstyled list-inline-item">5 dislikes</li>
-                  </ul>
-
-                  <div class="card-fecha">
-                    <ul class="list-unstyled mb-1">
-                       <li class="comment-date font-small text-muted">
-                         <i class="far fa-clock"></i> 05/10/2015</li>
-                     </ul>
-                  </div>
-
-                  <p class="text-dark text-justify">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                    nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-                </div>
-              </div>
-
-
-              <div class="media mb-3 pb-3 border-bottom  shadow">
-                <img class="img-circle rounded-circle z-depth-1-half d-flex mr-3" id="cliente-imagen" src="https://mdbootstrap.com/img/Photos/Avatars/img (8).jpg" alt="">
-                <div class="media-body">
-                  <a href="#"> <h5 class="nombre-cliente text-info font-weight-bold">Juan DKU</h5> </a>
-                  <ul class="likes-cometario mb-2 list-inline">
-                    <li class="far fa-thumbs-up text-primary list-inline-item"></li>
-                    <li class="text-secondary list-unstyled list-inline-item">25 likes</li>
-                    <li class="far fa-thumbs-down text-danger list-inline-item"></li>
-                    <li class="text-secondary list-unstyled list-inline-item">5 dislikes</li>
-                  </ul>
-
-
-                  <div class="card-fecha">
-                    <ul class="list-unstyled mb-1">
-                       <li class="comment-date font-small text-muted">
-                         <i class="far fa-clock"></i> 05/10/2015</li>
-                     </ul>
-                  </div>
-
-                  <p class="text-dark text-justify">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                    nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-                </div>
-              </div>
-
-              <div class="input-group contenedor-comentario pt-5" style="margin-bottom: 10px;">
-                <h4>Agrega un comentario</h4>
-                <input  style="width: 95%; border-radius:5px;"type="text" placeholder="Escribe un comentario sobre el producto...">
-                <div class="input-group-append" style="width:5%">
-                  <span class="input-group-text"><i class="fas fa-check-circle fa-2x"></i></span>
-                </div>
-              </div>
+                <!-- IDEA: SE GENERA DINAMICAMENTE -->
             </section>
           </div>
         </div>
@@ -233,65 +142,42 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <label for="inputState">Elige una sucursal donde comprar</label>
-        <select id="inputState" class="form-control">
-          <option selected>Elegir sucursal</option>
-          <option>sucursal 1</option>
-          <option>sucursal 2</option>
-          <option>sucursal 3</option>
-        </select>
+      <div class="modal-body" id="formularioAgregarCompra">
+        <label for="cantidadProducto" class="my-2">Cantidad Producto:</label>
+        <input class="form-control" type="number" id="cantidadProductoComprar">
 
-        <p class="py-3 my-3">Unidades disponibles en la sucursal seleccionada: 25 unidades</p>
-
-        <form class="form-inline">
-          <label for="unidadesComprar">Unidades a comprar</label>
-          <input type="text" id="unidadesComprar1" class="form-control ml-sm-2">
-        </form>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success">Comprar</button>
+        </div>
+      <div class="modal-footer" id="botonesAgregarCompra">
+  <!-- IDEA: SE agregan os botones dinamicamente por conveniencia -->
       </div>
     </div>
   </div>
 </div>
 
 
-<div class="modal fade" id="modalFormularioCarrito" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">¡Agregaras este produto al carrito!</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <label for="inputState">Elige una sucursal donde comprar</label>
-        <select id="inputState" class="form-control">
-          <option selected>Elegir sucursal</option>
-          <option>sucursal 1</option>
-          <option>sucursal 2</option>
-          <option>sucursal 3</option>
-        </select>
+<!-- IDEA: AQUI EMPIEZA EL MODAL PARA Agregar PRODUCTOS añ carrito-->
 
-        <p class="py-3 my-3">Unidades disponibles en la sucursal seleccionada: 25 unidades</p>
+          <div class="modal fade" id="modalFormularioCarrito" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle">Agregar al carrito</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body" id="formularioAgregarCarrito">
+                  <label for="cantidadProducto" class="my-2">Cantidad Producto:</label>
+                  <input class="form-control" type="number" id="cantidadProducto">
 
-        <form class="form-inline">
-          <label for="unidadesComprar">Unidades a comprar</label>
-          <input type="text" id="unidadesComprar" class="form-control ml-sm-2">
-        </form>
+                  </div>
+                  <div class="modal-footer" id="botonesAgregarCarrito">
+                    <!-- IDEA: SE agregan os botones dinamicamente por conveniencia -->
+                  </div>
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success">Agregar al Carrito</button>
-      </div>
-    </div>
-  </div>
-</div>
+                </div>
+              </div>
+            </div>
 
 
         </section>

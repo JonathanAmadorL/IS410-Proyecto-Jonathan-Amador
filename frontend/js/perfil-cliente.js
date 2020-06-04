@@ -18,26 +18,6 @@ function readCookie(name) {
 }
 
 
-function listarClientes(){
-  axios({
-    method: 'get',
-    url: '../backend/api/clientes.php',
-    responseType: 'json'
-  }).then(res=>{
-    console.log(res.data);
-    for(let i=0; i<res.data.length; i++){
-      document.getElementById('cliente-viendo').innerHTML +=
-      `<option value="${res.data[i].codigoCliente}">${res.data[i].nombreCliente} ${res.data[i].apellidoCliente}</option>`;
-    }
-    document.getElementById('cliente-viendo').value=null;
-  }).catch(error=>{
-    console.error(error);
-  });
-
-
-  alert(x);
-}
-
 
 function infoCliente(){
   var cliente= readCookie("codigoCliente");
@@ -225,6 +205,7 @@ function mostrarComentarios(){
 
 
 }
+mostrarComentarios();
 
 function mostrarCompras(){
   var cliente= readCookie("codigoCliente");
@@ -269,6 +250,8 @@ function mostrarCompras(){
     console.error(error);
   });
 }
+
+mostrarCompras();
 
 function mostrarCarrito(){
   var cliente= readCookie("codigoCliente");
@@ -322,6 +305,8 @@ function mostrarCarrito(){
 
 }
 
+mostrarCarrito();
+
 
 function mostrarFavoritos(){
   var cliente= readCookie("codigoCliente");
@@ -364,6 +349,8 @@ function mostrarFavoritos(){
       console.error(error);
     });
 }
+
+mostrarFavoritos();
 
 function verProducto(idProductoViendo) {
   document.getElementById('produtoCard').innerHTML = '';

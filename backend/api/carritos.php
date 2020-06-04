@@ -13,7 +13,7 @@ switch ($_SERVER['REQUEST_METHOD']){
       $_POST["codigoEmpresa"],
       $_POST["codigoProducto"],
       $_POST["precio"],
-      $_POST["cantidad"],
+      $_POST["cantidad"]
     );
 
     $carrito->guardarCarrito();

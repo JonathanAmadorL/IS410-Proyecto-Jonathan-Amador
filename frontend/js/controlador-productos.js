@@ -1,3 +1,22 @@
+function readCookie(name) {
+
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+
+  for(var i=0;i < ca.length;i++) {
+
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    if (c.indexOf(nameEQ) == 0) {
+      return decodeURIComponent( c.substring(nameEQ.length,c.length) );
+    }
+
+  }
+
+  return null;
+}
+
+
 function listarPromociones(){
 
   axios({
@@ -78,7 +97,7 @@ function verProducto(idProductoViendo) {
           <h4>Categoria del produto</h4>
           <h1>L. ${producto.precioProducto}</h1>
           <p>${producto.descripcionProducto}</p>
-          <button type="button" name="button" id="comprar"  data-toggle="modal" data-target="#modalFormularioComprar">Comprar</button>
+          <button type="button" name="button" id="comprar"  data-toggle="modal" data-target="#modalFormularioComprar" onclick="btnComprarProducto('${producto.codigoProducto}', '${producto.codigoEmpresa}', ${producto.precioProducto})">Comprar</button>
           <button type="button" name="button" id="comentarios" class="btn-comentarios" onclick="modalComentarios(),verComentariosProducto('${producto.codigoProducto}')"><i class="fas fa-comments"></i></button>
           <button type="button" name="button" id="carrito" data-toggle="modal" data-target="#modalFormularioCarrito" onclick="btnEnviarCarrito('${producto.codigoProducto}', '${producto.codigoEmpresa}', ${producto.precioProducto})"><i class="fas fa-cart-plus"></i></button>
 
@@ -89,6 +108,7 @@ function verProducto(idProductoViendo) {
     console.error(error);
   });
 }
+
 
 function verComentariosProducto(idProductoViendo){
   document.getElementById('comentariosSeccion').innerHTML =
@@ -165,4 +185,111 @@ function verComentariosProducto(idProductoViendo){
   }).catch(error=>{
     console.error(error);
   });
+}
+
+function btnEnviarCarrito(idProductoViendo, idEmpresa, precioProducto){
+  document.getElementById('botonesAgregarCarrito').innerHTML =
+  `
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+  <button type="button" class="btn btn-success" onclick="agregarCarrito('${idProductoViendo}', '${idEmpresa}', ${precioProducto})">Agregar Carrito</button>
+  `;
+}
+
+function agregarCarrito(idProductoViendo, idEmpresa, precioProducto){
+var cliente= readCookie("codigoCliente");
+    axios({
+      method: 'post',
+      url: '../backend/api/carritos.php',
+      responseType: 'json',
+      data: {
+        codigoCliente: cliente,
+        codigoEmpresa: idEmpresa,
+        codigoProducto: idProductoViendo,
+        precio: precioProducto,
+        cantidad: document.getElementById('cantidadProducto').value,
+      }
+    }).then(res=> {
+      console.log(res.data);
+
+
+    }).catch(error => {
+      console.error(error)
+    });
+}
+
+function agregarComentario(idProductoViendo){
+var cliente= readCookie("codigoCliente");
+ conseguirInfoCliente().then(res=> {
+   console.log(res.nombreCliente);
+   axios({
+     method: 'post',
+     url: '../backend/api/comentarios.php',
+     responseType: 'json',
+     data: {
+       codigoCliente: cliente,
+       codigoProducto: idProductoViendo,
+       nombreCliente: res.nombreCliente,
+       apellidoCliente: res.apellidoCliente,
+       contenido: document.getElementById('input-comentario').value,
+       imagenCliente: res.imagenCliente
+     }
+   }).then(res=> {
+     console.log(res.data);
+
+     verComentariosProducto(idProductoViendo);
+
+   }).catch(error => {
+     console.error(error)
+   });
+
+ }).catch(error=>{
+   console.error(error);
+ });
+
+}
+
+
+function btnComprarProducto(idProductoViendo, idEmpresa, precioProducto){
+  document.getElementById('botonesAgregarCompra').innerHTML =
+  `
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+  <button type="button" class="btn btn-success" onclick="agregarCompra('${idProductoViendo}', '${idEmpresa}', ${precioProducto})">Comprar</button>
+  `;
+}
+
+
+function agregarCompra(idProductoViendo, idEmpresa, precioProducto){
+var cliente= readCookie("codigoCliente");
+    axios({
+      method: 'post',
+      url: '../backend/api/compras.php',
+      responseType: 'json',
+      data: {
+        codigoCliente: cliente,
+        codigoEmpresa: idEmpresa,
+        codigoProducto: idProductoViendo,
+        precio: precioProducto,
+        cantidad: document.getElementById('cantidadProductoComprar').value
+      }
+    }).then(res=> {
+      console.log(res.data);
+
+
+    }).catch(error => {
+      console.error(error)
+    });
+}
+
+
+
+async function conseguirInfoCliente(){
+var cliente= readCookie("codigoCliente");
+  return axios({
+    method: 'get',
+    url: '../backend/api/clientes.php?id='+cliente,
+    responseType: 'json'
+  }).then(res=> res.data).catch(error => {
+    console.error(error)
+  });
+
 }

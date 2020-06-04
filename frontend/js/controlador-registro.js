@@ -1,5 +1,5 @@
 const formulario_empresa = document.getElementById('formulario_empresa');
-const url= '../../pruebas_proyecto/backend/api/empresas.php';
+const url= '../backend/api/empresas.php';
 
 formulario_empresa.addEventListener('submit',(e) => {
   e.preventDefault();
@@ -268,10 +268,26 @@ function guardarClientes(){
   if(validar_Info_Cliente()){
     let cliente={
         usuario_Cliente: document.getElementById('usuario-cliente').value,
+        apellidoCliente: "",
         email_Cliente: document.getElementById('email-cliente').value,
         password_Cliente: document.getElementById('password-cliente').value,
-
+        paisCliente: "Honduras"
     };
+
+    axios({
+      method:'POST',
+      url: '../backend/api/clientes.php',
+      responseType:'json',
+      data: cliente
+    }).then(res=>{
+      console.log(res.data);
+      limpiar_form_empresa();
+        document.getElementById('registrarse-btn-empresa').disabled= false;
+        document.getElementById('registrarse-btn-empresa').innerHTML="Registrarse";
+    }).catch(error=>{
+      console.error(error);
+    });
+
 
     limpiar_form_cliente();
   }

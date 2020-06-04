@@ -76,6 +76,8 @@ function portafolioEmpresa(){
   });
 }
 
+portafolioEmpresa();
+
 
 
 function listarProductosEnVenta(){
@@ -141,6 +143,8 @@ function listarProductosEnVenta(){
     console.error(error);
   });
 }
+
+listarProductosEnVenta();
 
 
 function listarSucursales(){
@@ -221,6 +225,8 @@ function listarSucursales(){
     console.error(error);
   });
 }
+
+listarSucursales();
 
 
 
@@ -430,11 +436,11 @@ formularioAgregarProducto.addEventListener('submit',(e) => {
 function agregarProducto(){
 
   if(validar_info_producto()){
-    empresaSeleccionada = document.getElementById('empresa-viendo');
-    nombreEmpresaSeleccionada = empresaSeleccionada.options[empresaSeleccionada.selectedIndex].text;
+    var codigoEmpresa= readCookie("codigoEmpresa");
+    var nombreEmpresa= readCookie("nombreEmpresa");
     let producto= {
-      codigoEmpresa : document.getElementById('empresa-viendo').value,
-  	  nombreEmpresa : nombreEmpresaSeleccionada,
+      codigoEmpresa : codigoEmpresa,
+  	  nombreEmpresa : nombreEmpresa,
   	 nombreProducto : document.getElementById('agregarNombreProducto').value,
   	 precioProducto : document.getElementById('agregarPrecioProducto').value,
   	 descuentoProducto : document.getElementById('agregarPctDescProducto').value,
@@ -563,11 +569,11 @@ formulario_sucursal.addEventListener('submit',(e) => {
 function agregarSucursal(){
 
   if(validar_info_sucursal()){
-    empresaSeleccionada = document.getElementById('empresa-viendo');
-    nombreEmpresaSeleccionada = empresaSeleccionada.options[empresaSeleccionada.selectedIndex].text;
+    var codigoEmpresa= readCookie("codigoEmpresa");
+    var nombreEmpresa= readCookie("nombreEmpresa");
     let sucursal= {
-      codigoEmpresa: document.getElementById('empresa-viendo').value,
-      nombreEmpresa: nombreEmpresaSeleccionada,
+      codigoEmpresa: codigoEmpresa,
+      nombreEmpresa: nombreEmpresa,
       nombreSucursal: document.getElementById('nombreSucursal').value,
       longitudSucursal: document.getElementById('longitudSucursal').value,
       latitudSucursal: document.getElementById('latitudSucursal').value,

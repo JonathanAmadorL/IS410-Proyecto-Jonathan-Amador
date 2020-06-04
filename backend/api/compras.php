@@ -6,6 +6,18 @@ sleep(1);
 switch ($_SERVER['REQUEST_METHOD']){
   case 'POST': //GUARDAR
 
+  $_POST= json_decode(file_get_contents('php://input'),true);
+  //echo "Guardar el usuario:". $_POST['nombre'];
+
+  $compra= new Compra(
+    $_POST["codigoCliente"],
+    $_POST["codigoEmpresa"],
+    $_POST["codigoProducto"],
+    $_POST["precio"],
+    $_POST["cantidad"]
+  );
+
+  $compra->guardarCompra();
 
     break;
 
